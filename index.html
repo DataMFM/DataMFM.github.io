@@ -1,4 +1,3 @@
-
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
   <!-- SITE TITTLE -->
@@ -30,13 +29,157 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
  <style type="text/css">
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Layout */
   .left,
   .right {
     float: left;
     width: 50%;
     padding-left: 0px;
   }
-  .left { padding-left: 20px; }
+  .left { 
+    padding-left: 20px; 
+  }
+  
+  /* ========================================
+     1. SLIM NAVIGATION BAR
+     ======================================== */
+  section:first-of-type {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .navbar {
+    padding: 8px 0 !important;
+    min-height: auto !important;
+  }
+  
+  .navbar-brand {
+    padding: 0 !important;
+    margin-right: 15px !important;
+  }
+  
+  .navbar-brand img {
+    width: 130px !important;
+    height: auto;
+  }
+  
+  .nav-link {
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+  }
+  
+  .navbar-nav {
+    margin: 0 !important;
+  }
+  
+  /* ========================================
+     2. REDUCE SECTION SPACING
+     ======================================== */
+  .section {
+    padding: 25px 0 !important;
+  }
+  
+  .popular-deals {
+    padding: 25px 0 !important;
+  }
+  
+  .section-title {
+    margin-bottom: 15px !important;
+  }
+  
+  .section-title h1 {
+    margin-bottom: 10px !important;
+  }
+  
+  .section-title h2 {
+    margin-bottom: 10px !important;
+  }
+  
+  .section-title h4 {
+    margin-bottom: 10px !important;
+  }
+  
+  /* Reduce paragraph spacing */
+  p {
+    margin-bottom: 10px !important;
+  }
+  
+  /* Reduce list spacing */
+  ul {
+    margin-bottom: 15px !important;
+  }
+  
+  /* Reduce container padding */
+  .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* ========================================
+     3. BIGGER ORGANIZER PHOTOS
+     ======================================== */
+  .category-block img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Make card containers bigger */
+  .card {
+    min-width: 200px !important;
+    max-width: 250px !important;
+    margin: 10px;
+  }
+  
+  /* Adjust table width to accommodate larger images */
+  .category-block table {
+    width: 100% !important;
+  }
+  
+  /* ========================================
+     ADDITIONAL IMPROVEMENTS
+     ======================================== */
+  /* Navigation hover effect */
+  .nav-link {
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #3498db !important;
+  }
+  
+  /* Reduce footer spacing */
+  .footer-bottom {
+    padding: 20px 0 !important;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .card {
+      flex: 0 0 calc(50% - 20px) !important;
+      min-width: 150px !important;
+    }
+    
+    .navbar-brand img {
+      width: 100px !important;
+    }
+    
+    .section {
+      padding: 20px 0 !important;
+    }
+    
+    .section-title h1 {
+      font-size: 24px !important;
+    }
+  }
 </style> 
   </head>
   
@@ -86,7 +229,7 @@
             </h1>
       <br>
       <h4>Workshop at CVPR 2026</h4>
-      <br><br>
+      <br>
             <h2 id="overivew">Overview</h2>
           </div>
           The Emerging Directions in Data for Multimodal Foundation Models (DataMFM) workshop focuses on advancing the data foundations of multimodal AI. While text data have matured through
@@ -138,8 +281,8 @@ foundation models</li>
     <strong>Submission Guidelines</strong>: <br>
     The workshop will accept submissions in three tracks:<br>
     <strong>(1) Full-length papers with proceedings Track</strong> (archival; anonymous submission): Up to 8 pages, excluding references, to be published in the official CVPR 2026 workshop proceedings<br>
-    <strong>(2) Short Papers or Extended Abstracts</strong>strong> (non-archival; anonymous submission): Up to 4 pages, excluding references and supplementary materials<br>
-    <strong>(3) Papers accepted to CVPR2026</strong>strong> (non-archival; non-anonymous): Full-length papers (up to 8 pages, excluding references) accepted to the main CVPR conference on topics relevant to the workshop
+    <strong>(2) Short Papers or Extended Abstracts</strong> (non-archival; anonymous submission): Up to 4 pages, excluding references and supplementary materials<br>
+    <strong>(3) Papers accepted to CVPR2026</strong> (non-archival; non-anonymous): Full-length papers (up to 8 pages, excluding references) accepted to the main CVPR conference on topics relevant to the workshop
         <br>
         <strong>Submission Site</strong>: TBD 
         <br>
@@ -232,12 +375,12 @@ foundation models</li>
 
 
         <div class="card-deck"> 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Xiaolong_Luo.png" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Xiaolong_Luo.png" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;"><h5 class="text-center"><a href="">Xiaolong Luo</a></h5></td>
@@ -250,12 +393,12 @@ foundation models</li>
             </div>
           </div>
 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Simeng_Han.png" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Simeng_Han.png" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;"><h5 class="text-center"><a href="">Simeng Han</a></h5></td>
@@ -281,12 +424,12 @@ foundation models</li>
         </div>
 
         <div class="card-deck" style="justify-content: center; display: flex; flex-wrap: wrap; width: 100%; margin: 0 auto;"> 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Pengyuan_Li.jpg" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Pengyuan_Li.jpg" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;"><h5 class="text-center"><a href="https://pengyuanli.github.io/">Pengyuan Li</a></h5></td>
@@ -299,12 +442,12 @@ foundation models</li>
             </div>
           </div>
 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Zihan_Wang.jpeg" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Zihan_Wang.jpeg" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -321,12 +464,12 @@ foundation models</li>
             </div>
           </div>
 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/zexue_he.jpg" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/zexue_he.jpg" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -343,12 +486,12 @@ foundation models</li>
             </div>
           </div>
 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Wenhu_Chen.jpg" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Wenhu_Chen.jpg" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -372,12 +515,12 @@ foundation models</li>
         <!-- <div class="card-deck">  -->
         <div class="card-deck" style="justify-content: center; display: flex; flex-wrap: wrap; width: 100%; margin: 0 auto;"> 
 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Manling_Li.jpg" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Manling_Li.jpg" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -395,12 +538,12 @@ foundation models</li>
           </div>
 
 
-          <div class="card" style="min-width: 180px; max-width: 220px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
-              <table width="80%" border="0" align="center">
+              <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/reogerio_ferris.png" alt="" width="80%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/reogerio_ferris.png" alt="" width="100%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
