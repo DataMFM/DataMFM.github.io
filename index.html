@@ -46,35 +46,41 @@
   }
   
   /* ========================================
-     1. SLIM NAVIGATION BAR
+     1. SLIM NAVIGATION BAR (keep original sizes, just remove margins)
      ======================================== */
   section:first-of-type {
     padding: 0 !important;
     margin: 0 !important;
   }
   
+  section:first-of-type .container {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+  
   .navbar {
-    padding: 8px 0 !important;
+    padding: 0 !important;
     min-height: auto !important;
+    margin-bottom: 0 !important;
   }
   
   .navbar-brand {
-    padding: 0 !important;
-    margin-right: 15px !important;
-  }
-  
-  .navbar-brand img {
-    width: 130px !important;
-    height: auto;
+    padding: 5px 0 !important;
+    margin-bottom: 0 !important;
   }
   
   .nav-link {
-    padding: 8px 12px !important;
-    font-size: 14px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
   }
   
   .navbar-nav {
-    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .navbar-toggler {
+    padding: 5px !important;
   }
   
   /* ========================================
@@ -90,18 +96,22 @@
   
   .section-title {
     margin-bottom: 15px !important;
+    line-height: 1.2 !important;
   }
   
   .section-title h1 {
     margin-bottom: 10px !important;
+    line-height: 1.3 !important;
   }
   
   .section-title h2 {
-    margin-bottom: 10px !important;
+    margin-bottom: 15px !important;
+    line-height: 1.3 !important;
   }
   
   .section-title h4 {
     margin-bottom: 10px !important;
+    line-height: 1.3 !important;
   }
   
   /* Reduce paragraph spacing */
@@ -121,10 +131,10 @@
   }
   
   /* ========================================
-     3. BIGGER ORGANIZER PHOTOS
+     3. BIGGER ORGANIZER PHOTOS (changed to 90%)
      ======================================== */
   .category-block img {
-    width: 100% !important;
+    width: 90% !important;
     height: auto;
     object-fit: cover;
     border-radius: 0;
@@ -142,6 +152,24 @@
   /* Adjust table width to accommodate larger images */
   .category-block table {
     width: 100% !important;
+  }
+  
+  /* Reduce space between name and affiliation */
+  .category-block tr[height="40px"] {
+    height: 30px !important;
+  }
+  
+  .category-block tr[height="20px"] {
+    height: 10px !important;
+  }
+  
+  .category-block h5 {
+    margin-bottom: 5px !important;
+  }
+  
+  .category-block p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
   
   /* ========================================
@@ -166,10 +194,6 @@
     .card {
       flex: 0 0 calc(50% - 20px) !important;
       min-width: 150px !important;
-    }
-    
-    .navbar-brand img {
-      width: 100px !important;
     }
     
     .section {
@@ -380,7 +404,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Xiaolong_Luo.png" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Xiaolong_Luo.png" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;"><h5 class="text-center"><a href="">Xiaolong Luo</a></h5></td>
@@ -398,7 +422,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Simeng_Han.png" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Simeng_Han.png" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;"><h5 class="text-center"><a href="">Simeng Han</a></h5></td>
@@ -429,7 +453,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Pengyuan_Li.jpg" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Pengyuan_Li.jpg" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;"><h5 class="text-center"><a href="https://pengyuanli.github.io/">Pengyuan Li</a></h5></td>
@@ -447,7 +471,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Zihan_Wang.jpeg" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Zihan_Wang.jpeg" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -469,7 +493,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/zexue_he.jpg" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/zexue_he.jpg" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -491,7 +515,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Wenhu_Chen.jpg" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Wenhu_Chen.jpg" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -520,7 +544,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/Manling_Li.jpg" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/Manling_Li.jpg" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
@@ -543,7 +567,7 @@ foundation models</li>
               <table width="100%" border="0" align="center">
                 <tbody align="center">
                   <tr height="120px">
-                    <td><img src="./res/portrait/reogerio_ferris.png" alt="" width="100%" style="border-radius: 0;"></td>
+                    <td><img src="./res/portrait/reogerio_ferris.png" alt="" width="90%" style="border-radius: 0;"></td>
                   </tr>
                   <tr height="40px">
                     <td style="padding-top: 5px;">
