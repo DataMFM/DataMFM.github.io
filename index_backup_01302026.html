@@ -1,0 +1,646 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <!-- SITE TITTLE -->
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | DataMFM Workshop at CVPR2026</title>
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link href="./res/jquery-ui.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="./res/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="./res/font-awesome.min.css" rel="stylesheet">
+  <!-- Owl Carousel -->
+  <link href="./res/slick.css" rel="stylesheet">
+  <link href="./res/slick-theme.css" rel="stylesheet">
+  <!-- Fancy Box -->
+  <link href="./res/jquery.fancybox.pack.css" rel="stylesheet">
+  <link href="./res/nice-select.css" rel="stylesheet">
+  <link href="./res/bootstrap-slider.min.css" rel="stylesheet">
+  <!-- CUSTOM CSS -->
+  <link href="./res/style.css" rel="stylesheet">
+  
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ <style type="text/css">
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Layout */
+  .left,
+  .right {
+    float: left;
+    width: 50%;
+    padding-left: 0px;
+  }
+  .left { 
+    padding-left: 20px; 
+  }
+  
+  /* ========================================
+     1. SLIM NAVIGATION BAR (keep original sizes, just remove margins)
+     ======================================== */
+  section:first-of-type {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  section:first-of-type .container {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+  
+  .navbar {
+    padding: 0 !important;
+    min-height: auto !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .navbar-brand {
+    padding: 5px 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .nav-link {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  
+  .navbar-nav {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .navbar-toggler {
+    padding: 5px !important;
+  }
+  
+  /* ========================================
+     2. REDUCE SECTION SPACING
+     ======================================== */
+  .section {
+    padding: 25px 0 !important;
+  }
+  
+  .popular-deals {
+    padding: 25px 0 !important;
+  }
+  
+  .section-title {
+    margin-bottom: 0px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .section-title h1 {
+    margin-bottom: 10px !important;
+    line-height: 1.3 !important;
+  }
+  
+  .section-title h2 {
+    margin-bottom: 25px !important;
+    padding-bottom: 5px !important;
+    line-height: 1.3 !important;
+  }
+  
+  .section-title h4 {
+    margin-bottom: 10px !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Reduce paragraph spacing */
+  p {
+    margin-bottom: 10px !important;
+  }
+  
+  /* Reduce list spacing */
+  ul {
+    margin-bottom: 15px !important;
+  }
+  
+  /* Reduce container padding */
+  .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* ========================================
+     3. BIGGER ORGANIZER PHOTOS (changed to 90%)
+     ======================================== */
+  .category-block img {
+    width: 90% !important;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Make card containers bigger */
+  .card {
+    min-width: 200px !important;
+    max-width: 250px !important;
+    margin: 10px;
+  }
+  
+  /* Adjust table width to accommodate larger images */
+  .category-block table {
+    width: 100% !important;
+  }
+  
+  /* Reduce space between name and affiliation */
+  .category-block tr[height="40px"] {
+    height: 30px !important;
+  }
+  
+  .category-block tr[height="20px"] {
+    height: 10px !important;
+  }
+  
+  .category-block h5 {
+    margin-bottom: 5px !important;
+  }
+  
+  .category-block p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* ========================================
+     ADDITIONAL IMPROVEMENTS
+     ======================================== */
+  /* Navigation hover effect */
+  .nav-link {
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #3498db !important;
+  }
+  
+  /* Reduce footer spacing */
+  .footer-bottom {
+    padding: 20px 0 !important;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .card {
+      flex: 0 0 calc(50% - 20px) !important;
+      min-width: 150px !important;
+    }
+    
+    .section {
+      padding: 20px 0 !important;
+    }
+    
+    .section-title h1 {
+      font-size: 24px !important;
+    }
+  }
+</style> 
+  </head>
+  
+  <body class="body-wrapper" data-new-gr-c-s-check-loaded="14.997.0" data-gr-ext-installed="">
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <nav class="navbar navbar-expand-lg  navigation"> <a class="navbar-brand" href="https://cvpr.thecvf.com/"> <img src="./res/logo/cvpr-logo.png" alt="" width="200px"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto main-nav">
+                    <li class="nav-item active"> <a class="nav-link" href="#overview">Home</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="#call">Calls</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="#dates">Dates</a> </li>
+                    <!-- <li class="nav-item"> <a class="nav-link " href="#schedule">Schedule</a> </li> -->
+                    <!-- <li class="nav-item"> <a class="nav-link " href="#speakers">Speakers</a> </li> -->
+                    <li class="nav-item"> <a class="nav-link " href="#challenge">Challenge</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="#organizers">Organizers</a> </li>
+                    <!-- <li class="nav-item"> <a class="nav-link " href="#paper">Papers</a> </li> -->
+                    <li class="nav-item"> <a class="nav-link " href="#sponsors">Sponsors</a> </li>
+                    <!-- <li class="nav-item"> <a class="nav-link " href="#committee">Committee</a> </li> -->
+                    <!-- <li class="nav-item"> <a class="nav-link " href="#previous">Previous</a> </li> -->
+                  </ul>
+
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+  
+  <!--==========================================
+  =            Overview Section            =
+  ===========================================-->
+  
+  <section class="popular-deals section bg-gray"> 
+    <!-- Container Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"> 
+          <!-- Section title -->
+          <div class="section-title">
+            <h1>Workshop on Emerging Directions in Data for Multimodal Foundation Models
+              <!-- <br>  -->
+            </h1>
+      <br>
+      <h4>Workshop at CVPR 2026</h4>
+      <br>
+            <h2 id="overivew">Overview</h2>
+          </div>
+          The Emerging Directions in Data for Multimodal Foundation Models (DataMFM) workshop focuses on advancing the data foundations of multimodal AI systems. While text data has benefited from decades of large-scale curation and standardization, multimodal data—spanning images, documents, video, audio, and cross-modal pairings—continues to face fundamental challenges in quality, diversity, coverage, and reproducibility.
+          This workshop examines emerging research directions that move beyond brute-force web-scale data collection, including the transition from web-scale to world-scale data, agentic and self-generated data pipelines, and principled data selection and mixture design. Core topics include data contamination and provenance, benchmark construction and renewal, multimodal alignment across heterogeneous modalities, and evaluation practices that remain robust as models and datasets evolve.
+          By bringing together researchers and practitioners from academia, industry, and open-data initiatives, DataMFM aims to  to define the foundation of next-generation multimodal data ecosystems.
+      </div>
+    </div>
+  </section>
+  
+
+    <!--==========================================
+  =            Call for Papers Section            =
+  ===========================================-->
+  
+  <section class="section"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-12"> 
+          <div class="section-title">
+            <h2 id="call">Call for Papers</h2>
+          </div>
+          We invite submissions on any topics related to Data for Multimodal Foundation Models (DataMFM), including, but not limited to: <br>
+    <ul style="margin-left: 40px">
+      <div style="margin-left: 40px">
+        <li>Data collection, generation, and curation for multimodal foundation models</li>
+        <li>Data quality improvement, filtering, and pruning for scalable and efficient multimodal training</li>
+        <li>Data recipes and mixture design for balancing scale, quality, diversity, and coverage</li>
+        <li>Synthetic–real hybrid datasets and multimodal data augmentation for robust model development</li>
+        <li>Benchmark renewal, creation, and evaluation design for trustworthy multimodal applications</li>
+        <li>Detection and mitigation of dataset contamination in training and evaluation</li>
+        <li>Cross-modal alignment and grounding across text, image, audio, and video modalities</li>
+        <li>Fairness, bias reduction, and inclusive representation in multimodal datasets</li>
+        <li>Data provenance, documentation, licensing, and governance for trustworthy dataset lifecycles</li>
+        <li>Metrics and frameworks for assessing multimodal data quality, diversity, and contamination</li>
+        <li>Bridging modality gaps between text-rich and vision-centric domains</li>
+        <li>Agentic synthetic data generation and self-improving data pipelines driven by multimodal or VLA
+models</li>
+        <li>Building sustainable, transparent, and community-driven multimodal data ecosystems for next generation
+foundation models</li>
+      </div>
+      
+    </ul>
+    <strong>Submission Guidelines</strong>: <br>
+    The workshop accepts submissions in three tracks:<br>
+    <strong>(1) Full-length Papers (Archival, Proceedings Track)</strong>: Up to 8 pages, excluding references; Double-blind review; Accepted papers will appear in the CVPR 2026 Workshop Proceedings;<br>
+    <strong>(2) Short Papers / Extended Abstracts (Non-archival)</strong>: Up to 4 pages, excluding references; Double-blind review; Intended for work-in-progress, datasets, benchmarks, and early-stage ideas;<br>
+    <strong>(3) CVPR 2026 Accepted Papers (Non-archival, Non-anonymous)</strong>: Papers accepted to the main CVPR 2026 conference; Presented at the workshop but not included in the workshop proceedings
+        <br>
+        <strong>Submission Site</strong>: To be announced. The submission portal will be published here once available.
+        <br>
+        All submissions should use the <a href="https://github.com/cvpr-org/author-kit/archive/refs/tags/CVPR2026-v1(latex).zip" style="color:blue;">CVPR 2026 paper template</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--===========================================
+  =            Important Dates            =
+  ============================================-->
+  
+  <section class="section bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2 id="dates">Important Dates</h2>
+          </div>
+          <div style="text-align:center;">
+            <table style="width: 70%; margin: 0 auto; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <th style="padding: 12px; text-align: left; font-size: 18px;">Event</th>
+                    <th style="padding: 12px; text-align: left; font-size: 18px;">Date</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px;">Paper submission deadline</td>
+                    <td style="padding: 12px;">February 25, 2026 (archival); April 1, 2026 (non-archival)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px;">Notification of acceptance</td>
+                    <td style="padding: 12px;">March 20, 2026 (archival); April 27, 2026 (non-archival)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px;">Camera-ready submission deadline</td>
+                    <td style="padding: 12px;">April 3, 2026 (archival)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 12px;">Workshop date</td>
+                    <td style="padding: 12px;">TBD</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ==========================================
+  =            Challenge Section            =
+  ===========================================-->
+  
+   <section class="section"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h2 id="challenge">DataMFM Challenge</h2>
+          </div>
+          The DataMFM Challenge focuses on multimodal document understanding, a core challenge at the intersection of vision, language, and structured reasoning. Building on <strong>OmniDocBench</strong> and its upcoming extension <strong>OmniDocBench-Pro</strong>, the challenge provides a unified evaluation framework for document-centric multimodal tasks involving charts, tables, figures, layouts, and natural text.
+          <br>
+            <strong>Scope</strong>:
+            TBD. <br>
+          
+            <strong>Timeline</strong>:
+            TBD. <br>
+          
+            <strong>Challenge Portal</strong>: 
+            TBD.
+    
+  </div>
+  </div>
+    </div>
+   </section>
+
+<!--==========================================
+=            Organizers Section            =
+===========================================-->
+
+        <section class="section bg-gray">
+        <div class="section-title">
+          <h2 id="pubc">Challenge Organizers</h2>
+        </div>
+
+
+        <div class="card-deck"> 
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/Xiaolong_Luo.png" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;"><h5 class="text-center"><a href="">Xiaolong Luo</a></h5></td>
+                  </tr>
+                  <tr height="20px">
+                    <td><p>Harvard University</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/Simeng_Han.png" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;"><h5 class="text-center"><a href="">Simeng Han</a></h5></td>
+                  </tr>
+                  <tr height="20px">
+                    <td><p>Stanford University</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        </section>
+        
+<section class="section"> 
+  <!-- Container Start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12"> 
+        <!-- Section title -->
+        <div class="section-title">
+          <h2 id="organizers">Organizers</h2>
+        </div>
+
+        <div class="card-deck" style="justify-content: center; display: flex; flex-wrap: wrap; width: 100%; margin: 0 auto;"> 
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/Pengyuan_Li.jpg" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;"><h5 class="text-center"><a href="https://pengyuanli.github.io/">Pengyuan Li</a></h5></td>
+                  </tr>
+                  <tr height="20px">
+                    <td><p>MIT-IBM Watson AI lab</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/Zihan_Wang.jpeg" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;">
+                      <h5 class="text-center"><a href="https://www.linkedin.com/in/zihanwanghms/">Zihan Wang</a></h5>
+                    </td>
+                  </tr>
+                  <tr height="20px">
+                    <td>
+                      <p>Abaka AI</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/zexue_he.jpg" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;">
+                      <h5 class="text-center"><a href="https://zexuehe.github.io/">Zexue He</a></h5>
+                    </td>
+                  </tr>
+                  <tr height="20px">
+                    <td>
+                      <p>Stanford University</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/Wenhu_Chen.jpg" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;">
+                      <h5 class="text-center"><a href="https://wenhuchen.github.io/">Wenhu Chen</a></h5>
+                    </td>
+                  </tr>
+                  <tr height="20px">
+                    <td>
+                      <p>University of Waterloo</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+  <br>
+  
+
+        <!-- <div class="card-deck">  -->
+        <div class="card-deck" style="justify-content: center; display: flex; flex-wrap: wrap; width: 100%; margin: 0 auto;"> 
+
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/Manling_Li.jpg" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;">
+                      <h5 class="text-center"><a href="https://limanling.github.io/">Manling Li</a></h5>
+                    </td>
+                  </tr>
+                  <tr height="20px">
+                    <td>
+                      <p>Northwestern University</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
+            <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
+              <table width="100%" border="0" align="center">
+                <tbody align="center">
+                  <tr height="120px">
+                    <td><img src="./res/portrait/reogerio_ferris.png" alt="" width="90%" style="border-radius: 0;"></td>
+                  </tr>
+                  <tr height="40px">
+                    <td style="padding-top: 5px;">
+                      <h5 class="text-center"><a href="https://www.rogerioferis.org/">Rogerio Feris</a></h5>
+                    </td>
+                  </tr>
+                  <tr height="20px">
+                    <td>
+                      <p>MIT-IBM Watson AI lab</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+</section>
+   
+
+<!--==========================================
+=            Sponsors Section            =
+===========================================-->
+
+ <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12"> 
+          <div class="section-title">
+            <h2 id="sponsors">Sponsors</h2>
+        </div>
+      <div class="row">
+          <div class="col-3" align="center">
+              <a href="https://www.abaka.ai" target="_blank">
+                <img src="./res/abaka_logo.png" width="80%">
+              </a>
+          </div>
+      </div>
+      </div>
+    </div>
+  </section> 
+
+  
+  <!--============================
+  =            Footer            =
+  =============================-->
+  
+  <!-- Footer Bottom -->
+  <footer class="footer-bottom"> 
+    <!-- Container Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-12"> 
+          <!-- Copyright -->
+          <div class="copyright">
+            <p class="text-center">For any further questions, please contact: <a href="mailto:datamfm@googlegroups.com" style="color: #3498db;">datamfm@googlegroups.com</a></p>
+              <p class="text-center">&copy; DataMFM Workshop @ CVPR2026. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JAVASCRIPTS --> 
+  <script src="./res/jquery.min.js"></script> 
+  <script src="./res/jquery-ui.min.js"></script> 
+  <script src="./res/tether.min.js"></script> 
+  <script src="./res/jquery.raty-fa.js"></script> 
+  <script src="./res/popper.min.js"></script> 
+  <script src="./res/bootstrap.min.js"></script> 
+  <script src="./res/bootstrap-slider.min.js"></script> 
+  <script src="./res/slick.min.js"></script> 
+  <script src="./res/jquery.nice-select.min.js"></script> 
+  <script src="./res/jquery.fancybox.pack.js"></script> 
+  <script src="./res/SmoothScroll.min.js"></script> 
+  <script src="./res/scripts.js"></script>
+  
+  
+  
+</body></html>
