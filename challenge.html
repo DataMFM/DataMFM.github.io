@@ -814,7 +814,7 @@
         }
 
         .code-block::before {
-            content: 'JSON';
+            content: 'Markdown';
             position: absolute;
             top: 0; right: 0;
             background: var(--accent);
@@ -1082,35 +1082,40 @@
         </section>
 
         <section id="tracks" class="animate-on-scroll">
-            <h2 class="section-title">Challenge Scope</h2>
-            <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p><strong>Coming Soon:</strong> Detailed challenge tracks and evaluation metrics will be announced. The challenge will cover document-centric multimodal tasks involving charts, tables, figures, layouts, and natural text.</p>
-            </div>
+            <h2 class="section-title">End-to-End Document Parsing</h2>
+            <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem; margin-bottom: 3.2rem;">
+                Given a document page image, produce a complete Markdown representation. The evaluation decomposes the output into four dimensions, following the <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> evaluation framework:
+            </p>
             <div class="tracks-grid">
                 <article class="track-card animate-on-scroll delay-1">
-                    <div class="track-number">TRACK 01</div>
-                    <h3>Document VQA</h3>
-                    <p>Answer natural language questions about document images, requiring understanding of text, layout, and visual elements.</p>
+                    <div class="track-number">01</div>
+                    <h3>Text Recognition</h3>
+                    <p>Extract and recognize text from document images including titles, text blocks, headers, and footers. Lower edit distance indicates better performance.</p>
                     <div class="track-metrics">
-                        <span class="metric-tag">TBD</span>
+                        <span class="metric-tag">Edit Distance ↓</span>
                     </div>
                 </article>
                 <article class="track-card animate-on-scroll delay-2">
-                    <div class="track-number">TRACK 02</div>
-                    <h3>Chart Understanding</h3>
-                    <p>Extract data and answer questions from charts and graphs, including bar charts, line plots, and pie charts.</p>
+                    <div class="track-number">02</div>
+                    <h3>Table Recognition</h3>
+                    <p>Parse table structures and extract cell contents from complex document tables. Evaluated on structural and content accuracy.</p>
                     <div class="track-metrics">
-                        <span class="metric-tag">TBD</span>
+                        <span class="metric-tag">TEDS ↑</span>
                     </div>
                 </article>
                 <article class="track-card animate-on-scroll delay-3">
-                    <div class="track-number">TRACK 03</div>
-                    <h3>Table Recognition</h3>
-                    <p>Parse table structures and extract cell contents from complex document tables.</p>
+                    <div class="track-number">03</div>
+                    <h3>Formula Recognition</h3>
+                    <p>Recognize mathematical formulas and convert them to LaTeX. Evaluated by CDM (Character Detection Matching), which compares rendered formula images for fair assessment across diverse LaTeX representations.</p>
                     <div class="track-metrics">
-                        <span class="metric-tag">TBD</span>
+                        <span class="metric-tag">CDM ↑</span>
                     </div>
                 </article>
+
+            </div>
+            <div class="info-box" style="margin-top: 3.2rem;">
+                <p><strong>Overall Score Formula:</strong> Rankings are determined by the Overall score:<br><br>
+                <code style="font-family: 'Space Mono', monospace; color: var(--accent); font-size: 1.3rem;">Overall = ((1 − Text_Edit_Distance) × 100 + Table_TEDS + Formula_CDM) / 3</code></p>
             </div>
         </section>
 
@@ -1150,12 +1155,12 @@
                 </div>
                 <table class="leaderboard-table">
                     <thead>
-                        <tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Score</th><th scope="col">Date</th></tr>
+                        <tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Text ED ↓</th><th scope="col">Table TEDS ↑</th><th scope="col">Formula CDM ↑</th><th scope="col">Overall ↑</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><span class="rank-badge rank-1">1</span></td><td>—</td><td class="score">—</td><td>—</td></tr>
-                        <tr><td><span class="rank-badge rank-2">2</span></td><td>—</td><td class="score">—</td><td>—</td></tr>
-                        <tr><td><span class="rank-badge rank-3">3</span></td><td>—</td><td class="score">—</td><td>—</td></tr>
+                        <tr><td><span class="rank-badge rank-1">1</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
+                        <tr><td><span class="rank-badge rank-2">2</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
+                        <tr><td><span class="rank-badge rank-3">3</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1177,27 +1182,49 @@
             <div class="submit-grid">
                 <div class="submit-card">
                     <h3>Submission Format</h3>
-                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">Submit your results as a JSON file:</p>
-                    <div class="code-block">{
-  "team_name": "Your Team Name",
-  "method_name": "Your Method",
-  "track": "document_vqa",
-  "predictions": [
-    {"question_id": "q001", "answer": "..."},
-    {"question_id": "q002", "answer": "..."}
-  ]
-}</div>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">Submit predictions as Markdown files — one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per document page, packed in a <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive:</p>
+                    <div class="code-block">submission.zip
+├── document_page_001.md   ← matches document_page_001.jpg
+├── document_page_002.md
+└── ...
+
+─── Example .md content ───
+
+# Section Title
+
+Body text paragraph with standard Markdown formatting.
+Separate paragraphs with double newlines.
+
+$$
+\frac{\partial L}{\partial \theta} = \sum_{i=1}^{N} \nabla_\theta \ell(f(x_i), y_i)
+$$
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Model&lt;/th&gt;&lt;th&gt;Accuracy&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Baseline&lt;/td&gt;&lt;td&gt;82.3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</div>
+                    <div style="margin-top: 1.6rem; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
+                        <strong style="color: var(--text-primary);">Format Rules:</strong><br>
+                        • <strong>Text:</strong> Standard Markdown. Paragraphs separated by double newlines (<code style="font-family:'Space Mono',monospace;color:var(--accent)">\n\n</code>). Headings with <code style="font-family:'Space Mono',monospace;color:var(--accent)">#</code>.<br>
+                        • <strong>Formulas:</strong> Display formulas in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$$...$$</code>, inline in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$...$</code>. Content must be LaTeX.<br>
+                        • <strong>Tables:</strong> HTML <code style="font-family:'Space Mono',monospace;color:var(--accent)">&lt;table&gt;</code> format (recommended for merged cells) or Markdown pipe tables.<br>
+                        • <strong>Order:</strong> Elements must appear in reading order — the eval script uses element position in the file as the predicted reading order.
+                    </div>
                 </div>
                 <div class="submit-card">
                     <h3>How to Submit</h3>
                     <ol>
-                        <li>Prepare predictions in the format shown</li>
-                        <li>Register your team</li>
-                        <li>Upload your submission file</li>
-                        <li>View results on the leaderboard</li>
+                        <li>Run your model on all document page images to produce one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per page</li>
+                        <li>Name each file to match the image filename (e.g., <code style="font-family:'Space Mono',monospace;color:var(--accent)">image_001.jpg</code> → <code style="font-family:'Space Mono',monospace;color:var(--accent)">image_001.md</code>)</li>
+                        <li>Pack all <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> files into a single <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive (flat structure, no subdirectories)</li>
+                        <li>Upload the <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> file to EvalAI</li>
                     </ol>
                     <div style="margin-top: 2.4rem;">
-                        <a href="https://2077ai.com/challenge/submit" class="btn-2077">Submit Now</a>
+                        <a href="https://eval.ai/web/challenges/list" class="btn-2077" target="_blank" rel="noopener">Submit on EvalAI</a>
                     </div>
                 </div>
             </div>
