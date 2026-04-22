@@ -1043,7 +1043,7 @@
             <h1>DataMFM</h1>
             <p class="hero-tagline">Multimodal Document Understanding</p>
             <p class="hero-desc">
-                Building on OmniDocBench and its upcoming extension OmniDocBench-Pro, the challenge provides a unified evaluation framework for document-centric multimodal tasks involving charts, tables, figures, layouts, and natural text.
+                Building on OmniDocBench and its upcoming extension OmniDocBench-Pro, the challenge covers both document understanding and chart understanding with unified benchmark tasks for multimodal foundation models.
             </p>
             <div class="countdown" aria-label="Countdown to CVPR 2026">
                 <div class="countdown-item">
@@ -1074,7 +1074,7 @@
         <section id="overview" class="animate-on-scroll">
             <h2 class="section-title">Overview</h2>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem; margin-bottom: 2.4rem;">
-                The DataMFM Challenge focuses on multimodal document understanding, a core challenge at the intersection of vision, language, and structured reasoning. Building on OmniDocBench and its upcoming extension OmniDocBench-Pro, the challenge provides a unified evaluation framework for document-centric multimodal tasks involving charts, tables, figures, layouts, and natural text.
+                The DataMFM Challenge focuses on multimodal document and chart understanding, spanning both page-level document parsing and chart-centric reasoning. Building on OmniDocBench and its upcoming extension OmniDocBench-Pro, the challenge will release both Doc data and Chart data under a unified evaluation setting for multimodal foundation models.
             </p>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem;">
                 This challenge is part of the <a href="https://datamfm.github.io/" style="color: var(--accent);">Emerging Directions in Data for Multimodal Foundation Models (DataMFM)</a> workshop at CVPR 2026, which examines research directions including web-scale to world-scale data, agentic and self-generated data pipelines, and principled data selection and mixture design.
@@ -1082,40 +1082,38 @@
         </section>
 
         <section id="tracks" class="animate-on-scroll">
-            <h2 class="section-title">End-to-End Document Parsing</h2>
+            <h2 class="section-title">Challenge Tasks</h2>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem; margin-bottom: 3.2rem;">
-                Given a document page image, produce a complete Markdown representation. The evaluation decomposes the output into four dimensions, following the <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> evaluation framework:
+                The challenge will include both <strong>Doc</strong> data and <strong>Chart</strong> data. At launch, participants will be able to evaluate models on the following tasks:
             </p>
             <div class="tracks-grid">
                 <article class="track-card animate-on-scroll delay-1">
                     <div class="track-number">01</div>
-                    <h3>Text Recognition</h3>
-                    <p>Extract and recognize text from document images including titles, text blocks, headers, and footers. Lower edit distance indicates better performance.</p>
+                    <h3>Doc Parsing</h3>
+                    <p>Given a document page image, produce a structured representation that captures text, layout, tables, formulas, figures, and reading order for end-to-end document understanding.</p>
                     <div class="track-metrics">
-                        <span class="metric-tag">Edit Distance ↓</span>
+                        <span class="metric-tag">Doc Data</span>
                     </div>
                 </article>
                 <article class="track-card animate-on-scroll delay-2">
                     <div class="track-number">02</div>
-                    <h3>Table Recognition</h3>
-                    <p>Parse table structures and extract cell contents from complex document tables. Evaluated on structural and content accuracy.</p>
+                    <h3>Chart-to-CSV</h3>
+                    <p>Given a chart image, extract the underlying data table as CSV. This task measures how well models recover structured values, labels, and chart semantics from visual charts.</p>
                     <div class="track-metrics">
-                        <span class="metric-tag">TEDS ↑</span>
+                        <span class="metric-tag">Chart Data</span>
                     </div>
                 </article>
                 <article class="track-card animate-on-scroll delay-3">
                     <div class="track-number">03</div>
-                    <h3>Formula Recognition</h3>
-                    <p>Recognize mathematical formulas and convert them to LaTeX. Evaluated by CDM (Character Detection Matching), which compares rendered formula images for fair assessment across diverse LaTeX representations.</p>
+                    <h3>Chart-to-Summary</h3>
+                    <p>Given a chart image, generate a concise natural-language summary that captures the chart's main trends, comparisons, and key takeaways.</p>
                     <div class="track-metrics">
-                        <span class="metric-tag">CDM ↑</span>
+                        <span class="metric-tag">Chart Data</span>
                     </div>
                 </article>
-
             </div>
             <div class="info-box" style="margin-top: 3.2rem;">
-                <p><strong>Overall Score Formula:</strong> Rankings are determined by the Overall score:<br><br>
-                <code style="font-family: 'Space Mono', monospace; color: var(--accent); font-size: 1.3rem;">Overall = ((1 − Text_Edit_Distance) × 100 + Table_TEDS + Formula_CDM) / 3</code></p>
+                <p><strong>More details coming soon:</strong> Exact formats, metrics, and submission instructions for each task will be released together with the official data and evaluation toolkit.</p>
             </div>
         </section>
 
@@ -1147,29 +1145,14 @@
         <section id="leaderboard" class="animate-on-scroll">
             <h2 class="section-title">Leaderboard</h2>
             <div class="info-box">
-                <p><strong>Coming Soon:</strong> The leaderboard will be available once the challenge officially launches. Stay tuned!</p>
-            </div>
-            <div class="leaderboard-card" style="opacity: 0.6;">
-                <div class="leaderboard-header">
-                    <h3>Leaderboard Preview</h3>
-                </div>
-                <table class="leaderboard-table">
-                    <thead>
-                        <tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Text ED ↓</th><th scope="col">Table TEDS ↑</th><th scope="col">Formula CDM ↑</th><th scope="col">Overall ↑</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><span class="rank-badge rank-1">1</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
-                        <tr><td><span class="rank-badge rank-2">2</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
-                        <tr><td><span class="rank-badge rank-3">3</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
-                    </tbody>
-                </table>
+                <p><strong>Coming Soon:</strong> The leaderboard will be available once the challenge officially launches. Separate leaderboard views and metrics will be provided for Doc Parsing, Chart-to-CSV, and Chart-to-Summary.</p>
             </div>
         </section>
 
         <section id="data" class="animate-on-scroll">
             <h2 class="section-title">Dataset</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p>The challenge data is based on <strong>OmniDocBench</strong> and its upcoming extension <strong>OmniDocBench-Pro</strong>. Download links and detailed documentation will be released when the challenge launches.</p>
+                <p>The challenge data is based on <strong>OmniDocBench</strong> and its upcoming extension <strong>OmniDocBench-Pro</strong>, and will include both <strong>Doc</strong> data and <strong>Chart</strong> data. Download links and detailed task documentation will be released when the challenge launches.</p>
             </div>
             <div class="btn-group" style="animation: none; opacity: 1;">
                 <a href="#" class="btn-2077 btn-outline">Dataset (Coming Soon)</a>
@@ -1181,47 +1164,25 @@
             <h2 class="section-title">Submission</h2>
             <div class="submit-grid">
                 <div class="submit-card">
-                    <h3>Submission Format</h3>
-                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">Submit predictions as Markdown files — one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per document page, packed in a <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive:</p>
-                    <div class="code-block">submission.zip
-├── document_page_001.md   ← matches document_page_001.jpg
-├── document_page_002.md
-└── ...
-
-─── Example .md content ───
-
-# Section Title
-
-Body text paragraph with standard Markdown formatting.
-Separate paragraphs with double newlines.
-
-$$
-\frac{\partial L}{\partial \theta} = \sum_{i=1}^{N} \nabla_\theta \ell(f(x_i), y_i)
-$$
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Model&lt;/th&gt;&lt;th&gt;Accuracy&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Baseline&lt;/td&gt;&lt;td&gt;82.3&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</div>
+                    <h3>Submission Tracks</h3>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">The challenge will open separate evaluation tracks for:</p>
+                    <div class="code-block">01. Doc Parsing
+02. Chart-to-CSV
+03. Chart-to-Summary</div>
                     <div style="margin-top: 1.6rem; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
-                        <strong style="color: var(--text-primary);">Format Rules:</strong><br>
-                        • <strong>Text:</strong> Standard Markdown. Paragraphs separated by double newlines (<code style="font-family:'Space Mono',monospace;color:var(--accent)">\n\n</code>). Headings with <code style="font-family:'Space Mono',monospace;color:var(--accent)">#</code>.<br>
-                        • <strong>Formulas:</strong> Display formulas in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$$...$$</code>, inline in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$...$</code>. Content must be LaTeX.<br>
-                        • <strong>Tables:</strong> HTML <code style="font-family:'Space Mono',monospace;color:var(--accent)">&lt;table&gt;</code> format (recommended for merged cells) or Markdown pipe tables.<br>
-                        • <strong>Order:</strong> Elements must appear in reading order — the eval script uses element position in the file as the predicted reading order.
+                        <strong style="color: var(--text-primary);">Note:</strong><br>
+                        • Each track will have its own data format and evaluation protocol.<br>
+                        • Official examples, starter kits, and packaging instructions will be released together with the benchmark data.<br>
+                        • The final submission portal will be hosted on EvalAI.
                     </div>
                 </div>
                 <div class="submit-card">
                     <h3>How to Submit</h3>
                     <ol>
-                        <li>Run your model on all document page images to produce one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per page</li>
-                        <li>Name each file to match the image filename (e.g., <code style="font-family:'Space Mono',monospace;color:var(--accent)">image_001.jpg</code> → <code style="font-family:'Space Mono',monospace;color:var(--accent)">image_001.md</code>)</li>
-                        <li>Pack all <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> files into a single <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive (flat structure, no subdirectories)</li>
-                        <li>Upload the <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> file to EvalAI</li>
+                        <li>Download the official task package when the challenge launches</li>
+                        <li>Run your model on the corresponding Doc or Chart benchmark split</li>
+                        <li>Package predictions following the task-specific instructions</li>
+                        <li>Upload results to EvalAI for evaluation and leaderboard tracking</li>
                     </ol>
                     <div style="margin-top: 2.4rem;">
                         <a href="https://eval.ai/web/challenges/list" class="btn-2077" target="_blank" rel="noopener">Submit on EvalAI</a>
