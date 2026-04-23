@@ -1041,11 +1041,11 @@
     <section class="hero">
         <div class="hero-content">
             <h1>DataMFM</h1>
-            <p class="hero-tagline">Multimodal Document Understanding</p>
+            <p class="hero-tagline">Two Challenges: OmniDocBench-Pro + ChartNet</p>
             <p class="hero-desc">
-                Building on OmniDocBench and its upcoming extension OmniDocBench-Pro, the challenge provides a unified evaluation framework for document-centric multimodal tasks involving charts, tables, figures, layouts, and natural text.
+                The DataMFM Challenge website currently hosts two benchmark tracks: <strong>OmniDocBench-Pro</strong> for document parsing and <strong>ChartNet</strong> for chart understanding. Together, they target multimodal document understanding across natural text, tables, formulas, layouts, and charts.
             </p>
-            <div class="countdown" aria-label="Countdown to CVPR 2026">
+            <div class="countdown" aria-label="Countdown to May 29 target date">
                 <div class="countdown-item">
                     <div class="number" id="days" aria-live="polite">--</div>
                     <div class="label">Days</div>
@@ -1074,72 +1074,65 @@
         <section id="overview" class="animate-on-scroll">
             <h2 class="section-title">Overview</h2>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem; margin-bottom: 2.4rem;">
-                The DataMFM Challenge focuses on multimodal document understanding, a core challenge at the intersection of vision, language, and structured reasoning. Building on OmniDocBench and its upcoming extension OmniDocBench-Pro, the challenge provides a unified evaluation framework for document-centric multimodal tasks involving charts, tables, figures, layouts, and natural text.
+                The DataMFM Challenge focuses on multimodal document understanding at the intersection of vision, language, and structured reasoning. The challenge website currently includes two components: <strong>OmniDocBench-Pro</strong> for end-to-end document parsing and <strong>ChartNet</strong> for chart understanding.
             </p>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem;">
-                This challenge is part of the <a href="https://datamfm.github.io/" style="color: var(--accent);">Emerging Directions in Data for Multimodal Foundation Models (DataMFM)</a> workshop at CVPR 2026, which examines research directions including web-scale to world-scale data, agentic and self-generated data pipelines, and principled data selection and mixture design.
+                These two components are designed to cover complementary capabilities: extracting structured content from document pages and understanding chart-centric visual information. This challenge is part of the <a href="https://datamfm.github.io/" style="color: var(--accent);">Emerging Directions in Data for Multimodal Foundation Models (DataMFM)</a> workshop at CVPR 2026.
             </p>
         </section>
 
         <section id="tracks" class="animate-on-scroll">
-            <h2 class="section-title">End-to-End Document Parsing</h2>
+            <h2 class="section-title">Scope</h2>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem; margin-bottom: 3.2rem;">
-                Given a document page image, produce a complete Markdown representation. The evaluation decomposes the output into four dimensions, following the <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> evaluation framework:
+                The challenge scope currently includes two complementary tasks: <strong>document parsing</strong> and <strong>chart understanding</strong>. The goal is to evaluate systems that can recover structured information from complex visual documents and chart-centric figures.
             </p>
             <div class="tracks-grid">
                 <article class="track-card animate-on-scroll delay-1">
                     <div class="track-number">01</div>
-                    <h3>Text Recognition</h3>
-                    <p>Extract and recognize text from document images including titles, text blocks, headers, and footers. Lower edit distance indicates better performance.</p>
-                    <div class="track-metrics">
-                        <span class="metric-tag">Edit Distance ↓</span>
-                    </div>
+                    <h3>Document Parsing</h3>
+                    <p>Based on <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> and its extension <strong>OmniDocBench-Pro</strong>, this part focuses on recovering complete document content from page images, including natural text, tables, formulas, and layout-aware structure.</p>
                 </article>
                 <article class="track-card animate-on-scroll delay-2">
                     <div class="track-number">02</div>
-                    <h3>Table Recognition</h3>
-                    <p>Parse table structures and extract cell contents from complex document tables. Evaluated on structural and content accuracy.</p>
-                    <div class="track-metrics">
-                        <span class="metric-tag">TEDS ↑</span>
-                    </div>
+                    <h3>Chart Understanding</h3>
+                    <p>Based on <strong>ChartNet</strong>, this part focuses on understanding chart-centric visual content, including extracting structured information from charts and supporting downstream chart interpretation tasks.</p>
                 </article>
-                <article class="track-card animate-on-scroll delay-3">
-                    <div class="track-number">03</div>
-                    <h3>Formula Recognition</h3>
-                    <p>Recognize mathematical formulas and convert them to LaTeX. Evaluated by CDM (Character Detection Matching), which compares rendered formula images for fair assessment across diverse LaTeX representations.</p>
-                    <div class="track-metrics">
-                        <span class="metric-tag">CDM ↑</span>
-                    </div>
-                </article>
-
-            </div>
-            <div class="info-box" style="margin-top: 3.2rem;">
-                <p><strong>Overall Score Formula:</strong> Rankings are determined by the Overall score:<br><br>
-                <code style="font-family: 'Space Mono', monospace; color: var(--accent); font-size: 1.3rem;">Overall = ((1 − Text_Edit_Distance) × 100 + Table_TEDS + Formula_CDM) / 3</code></p>
             </div>
         </section>
 
         <section id="timeline" class="animate-on-scroll">
             <h2 class="section-title">Timeline</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p><strong>Note:</strong> Challenge timeline will be announced soon. See the <a href="https://datamfm.github.io/#dates">workshop dates</a> for paper submission deadlines.</p>
+                <p><strong>Current target:</strong> countdown is set to May 29. Final workshop date is confirmed for June 3.</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">TBD</div>
-                    <div class="timeline-event">Challenge Announcement</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">TBD</div>
-                    <div class="timeline-event">Data Release</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">TBD</div>
-                    <div class="timeline-event">Submission Deadline</div>
+                <div class="timeline-item completed">
+                    <div class="timeline-date">Apr 23</div>
+                    <div class="timeline-event">Initial workshop webpage ready</div>
                 </div>
                 <div class="timeline-item current">
-                    <div class="timeline-date">June 2026</div>
-                    <div class="timeline-event">Workshop @ CVPR</div>
+                    <div class="timeline-date">Apr 24</div>
+                    <div class="timeline-event">Open for feedback</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Apr 27</div>
+                    <div class="timeline-event">Target date to release dataset</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 11</div>
+                    <div class="timeline-event">Open submissions</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 30</div>
+                    <div class="timeline-event">Close submissions</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">4 days later</div>
+                    <div class="timeline-event">Finalize leaderboard</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun 3</div>
+                    <div class="timeline-event">Official workshop</div>
                 </div>
             </div>
         </section>
@@ -1147,32 +1140,17 @@
         <section id="leaderboard" class="animate-on-scroll">
             <h2 class="section-title">Leaderboard</h2>
             <div class="info-box">
-                <p><strong>Coming Soon:</strong> The leaderboard will be available once the challenge officially launches. Stay tuned!</p>
-            </div>
-            <div class="leaderboard-card" style="opacity: 0.6;">
-                <div class="leaderboard-header">
-                    <h3>Leaderboard Preview</h3>
-                </div>
-                <table class="leaderboard-table">
-                    <thead>
-                        <tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Text ED ↓</th><th scope="col">Table TEDS ↑</th><th scope="col">Formula CDM ↑</th><th scope="col">Overall ↑</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><span class="rank-badge rank-1">1</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
-                        <tr><td><span class="rank-badge rank-2">2</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
-                        <tr><td><span class="rank-badge rank-3">3</span></td><td>—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td></tr>
-                    </tbody>
-                </table>
+                <p><strong>Coming Soon:</strong> The leaderboard section is intentionally left empty for now and will be populated after submissions open.</p>
             </div>
         </section>
 
         <section id="data" class="animate-on-scroll">
             <h2 class="section-title">Dataset</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p>The challenge data is based on <strong>OmniDocBench</strong> and its upcoming extension <strong>OmniDocBench-Pro</strong>. Download links and detailed documentation will be released when the challenge launches.</p>
+                <p>The website dataset section covers two sources: <strong>OmniDocBench-Pro</strong> for document parsing and <strong>ChartNet</strong> for chart understanding. A 1,000-sample release package is being prepared, and the dataset access link will be updated here as the release is finalized.</p>
             </div>
             <div class="btn-group" style="animation: none; opacity: 1;">
-                <a href="#" class="btn-2077 btn-outline">Dataset (Coming Soon)</a>
+                <a href="https://drive.google.com/drive/folders/1_yblFx9bz7nSSEsaWAAkW-DsSefTVXU1?usp=sharing" class="btn-2077 btn-outline" target="_blank" rel="noopener">Dataset Access</a>
                 <a href="https://github.com/opendatalab/OmniDocBench" class="btn-2077 btn-outline" target="_blank" rel="noopener">OmniDocBench GitHub</a>
             </div>
         </section>
@@ -1292,7 +1270,7 @@ $$
         });
         
         // Countdown
-        const deadline = new Date('2026-05-28T23:59:00-07:00').getTime();
+        const deadline = new Date('2026-05-29T23:59:00-07:00').getTime();
         function updateCountdown() {
             const now = Date.now();
             const distance = deadline - now;
