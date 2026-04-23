@@ -1095,7 +1095,7 @@
                 <article class="track-card animate-on-scroll delay-2">
                     <div class="track-number">02</div>
                     <h3>Chart Understanding</h3>
-                    <p>Based on <strong>ChartNet-Bench</strong>, this part focuses on <strong>faithful multimodal chart understanding</strong>. It covers chart-to-CSV extraction, chart summarization, and hallucination detection/correction, emphasizing faithfulness, completeness, and evidence-grounded interpretation of chart content.</p>
+                    <p>Powered by <strong>ChartNet-Bench</strong>, this track evaluates how well models understand charts in a faithful and usable way. It focuses on recovering structured chart data, generating grounded chart summaries, and identifying unsupported or hallucinated chart descriptions for more reliable chart-centric reasoning.</p>
                 </article>
             </div>
         </section>
@@ -1139,7 +1139,19 @@
         <section id="data" class="animate-on-scroll">
             <h2 class="section-title">Dataset</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p>The website dataset section covers two sources: <strong>OmniDocBench-Pro</strong> for document parsing and <strong>ChartNet-Bench</strong> for chart understanding. A 1,000-sample release package is being prepared, and the dataset access link will be updated here as the release is finalized.</p>
+                <p>The challenge dataset is organized around two complementary components: <strong>OmniDocBench-Pro</strong> for document parsing and <strong>ChartNet-Bench</strong> for chart understanding. Public release materials are being prepared and the access links below will be updated as they are finalized.</p>
+            </div>
+            <div class="tracks-grid" style="margin-bottom: 3.2rem;">
+                <article class="track-card animate-on-scroll delay-1">
+                    <div class="track-number">01</div>
+                    <h3>Document Parsing Data</h3>
+                    <p>This component focuses on page-level document understanding, including text, tables, formulas, and layout-aware structure based on OmniDocBench-Pro.</p>
+                </article>
+                <article class="track-card animate-on-scroll delay-2">
+                    <div class="track-number">02</div>
+                    <h3>Chart Understanding Data</h3>
+                    <p>This component focuses on chart-centric visual understanding based on ChartNet-Bench, including structured data extraction and grounded chart interpretation tasks.</p>
+                </article>
             </div>
             <div class="btn-group" style="animation: none; opacity: 1;">
                 <a href="https://drive.google.com/drive/folders/1_yblFx9bz7nSSEsaWAAkW-DsSefTVXU1?usp=sharing" class="btn-2077 btn-outline" target="_blank" rel="noopener">Dataset Access</a>
@@ -1149,10 +1161,13 @@
 
         <section id="submit" class="animate-on-scroll">
             <h2 class="section-title">Submission</h2>
+            <div class="info-box" style="margin-bottom: 3.2rem;">
+                <p><strong>Current public note:</strong> submission details are being organized by challenge component. The document parsing track already follows the Markdown-based OmniDocBench-Pro format below, while ChartNet-Bench submission instructions will be announced separately on this page.</p>
+            </div>
             <div class="submit-grid">
                 <div class="submit-card">
-                    <h3>Submission Format</h3>
-                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">Submit predictions as Markdown files — one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per document page, packed in a <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive:</p>
+                    <h3>Document Parsing Submission</h3>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the document parsing track, submit predictions as Markdown files — one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per document page, packed in a <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive:</p>
                     <div class="code-block">submission.zip
 ├── document_page_001.md   ← matches document_page_001.jpg
 ├── document_page_002.md
@@ -1186,12 +1201,12 @@ $$
                     </div>
                 </div>
                 <div class="submit-card">
-                    <h3>How to Submit</h3>
+                    <h3>Track-specific Instructions</h3>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 1.6rem;">Submission instructions will be released separately for the two challenge components:</p>
                     <ol>
-                        <li>Run your model on all document page images to produce one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per page</li>
-                        <li>Name each file to match the image filename (e.g., <code style="font-family:'Space Mono',monospace;color:var(--accent)">image_001.jpg</code> → <code style="font-family:'Space Mono',monospace;color:var(--accent)">image_001.md</code>)</li>
-                        <li>Pack all <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> files into a single <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive (flat structure, no subdirectories)</li>
-                        <li>Upload the <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> file to EvalAI</li>
+                        <li><strong>OmniDocBench-Pro / Document Parsing:</strong> Markdown-based page-level submission, packaged as a single <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> file</li>
+                        <li><strong>ChartNet-Bench / Chart Understanding:</strong> task-specific submission instructions will be announced together with the chart track release materials</li>
+                        <li>All official submission links and evaluation entry points will be posted on the challenge website</li>
                     </ol>
                     <div style="margin-top: 2.4rem;">
                         <a href="https://eval.ai/web/challenges/list" class="btn-2077" target="_blank" rel="noopener">Submit on EvalAI</a>
