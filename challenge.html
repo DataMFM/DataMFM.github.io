@@ -757,6 +757,37 @@
             letter-spacing: 0.1rem;
         }
 
+        .leaderboard-sort {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            border: none;
+            color: inherit;
+            font: inherit;
+            text-transform: inherit;
+            letter-spacing: inherit;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .leaderboard-sort:hover,
+        .leaderboard-sort:focus {
+            color: var(--accent);
+            outline: none;
+        }
+
+        .sort-indicator {
+            font-size: 1rem;
+            color: var(--text-muted);
+            min-width: 1.2rem;
+            display: inline-block;
+        }
+
+        .leaderboard-sort.active .sort-indicator {
+            color: var(--accent);
+        }
+
         .leaderboard-table td { font-size: 1.4rem; }
         .leaderboard-table tr { transition: all 0.3s; }
         .leaderboard-table tbody tr:hover { background: var(--bg-secondary); }
@@ -1132,16 +1163,16 @@
                 <div class="leaderboard-header">
                     <h3>Document Parsing Demo</h3>
                 </div>
-                <table class="leaderboard-table">
+                <table class="leaderboard-table sortable-table" data-default-sort="6" data-default-direction="desc">
                     <thead>
                         <tr>
-                            <th scope="col">Rank</th>
-                            <th scope="col">Team</th>
-                            <th scope="col">Text ED ↓</th>
-                            <th scope="col">Table TEDS ↑</th>
-                            <th scope="col">Formula CDM ↑</th>
-                            <th scope="col">Reading Order ↑</th>
-                            <th scope="col">Overall ↑</th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="rank"><span>Rank</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="text"><span>Team</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="asc"><span>Text ED ↓</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Table TEDS ↑</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Formula CDM ↑</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Reading Order ↑</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort active" type="button" data-sort-type="number" data-sort-direction="desc"><span>Overall ↑</span><span class="sort-indicator">↓</span></button></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1180,16 +1211,16 @@
                 <div class="leaderboard-header">
                     <h3>Chart Understanding Demo</h3>
                 </div>
-                <table class="leaderboard-table">
+                <table class="leaderboard-table sortable-table" data-default-sort="6" data-default-direction="desc">
                     <thead>
                         <tr>
-                            <th scope="col">Rank</th>
-                            <th scope="col">Team</th>
-                            <th scope="col">Chart-to-CSV ↑</th>
-                            <th scope="col">Summary Faithfulness ↑</th>
-                            <th scope="col">Hallucination Detection ↑</th>
-                            <th scope="col">Correction Quality ↑</th>
-                            <th scope="col">Overall ↑</th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="rank"><span>Rank</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="text"><span>Team</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Chart-to-CSV ↑</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Summary Faithfulness ↑</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Hallucination Detection ↑</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Correction Quality ↑</span><span class="sort-indicator">↕</span></button></th>
+                            <th scope="col"><button class="leaderboard-sort active" type="button" data-sort-type="number" data-sort-direction="desc"><span>Overall ↑</span><span class="sort-indicator">↓</span></button></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1426,6 +1457,66 @@ $$
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // Sortable leaderboard tables
+        function parseCellValue(text, sortType) {
+            const trimmed = text.trim();
+            if (sortType === 'number' || sortType === 'rank') {
+                const num = parseFloat(trimmed.replace(/[^0-9.-]/g, ''));
+                return Number.isNaN(num) ? -Infinity : num;
+            }
+            return trimmed.toLowerCase();
+        }
+
+        function updateSortIndicators(table, activeButton, direction) {
+            table.querySelectorAll('.leaderboard-sort').forEach(button => {
+                button.classList.remove('active');
+                const indicator = button.querySelector('.sort-indicator');
+                if (indicator) indicator.textContent = '↕';
+            });
+            activeButton.classList.add('active');
+            const activeIndicator = activeButton.querySelector('.sort-indicator');
+            if (activeIndicator) activeIndicator.textContent = direction === 'asc' ? '↑' : '↓';
+        }
+
+        function sortTable(table, button, directionOverride = null) {
+            const th = button.closest('th');
+            const row = th.parentElement;
+            const columnIndex = Array.from(row.children).indexOf(th);
+            const sortType = button.dataset.sortType || 'text';
+            const preferredDirection = button.dataset.sortDirection || 'desc';
+            const currentDirection = button.dataset.currentDirection;
+            const direction = directionOverride || (currentDirection ? (currentDirection === 'asc' ? 'desc' : 'asc') : preferredDirection);
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+
+            rows.sort((a, b) => {
+                const aValue = parseCellValue(a.children[columnIndex].innerText, sortType);
+                const bValue = parseCellValue(b.children[columnIndex].innerText, sortType);
+                if (aValue < bValue) return direction === 'asc' ? -1 : 1;
+                if (aValue > bValue) return direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            rows.forEach(rowEl => tbody.appendChild(rowEl));
+            table.querySelectorAll('.leaderboard-sort').forEach(btn => delete btn.dataset.currentDirection);
+            button.dataset.currentDirection = direction;
+            updateSortIndicators(table, button, direction);
+        }
+
+        document.querySelectorAll('.sortable-table').forEach(table => {
+            const buttons = table.querySelectorAll('.leaderboard-sort');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => sortTable(table, button));
+            });
+
+            const defaultIndex = Number(table.dataset.defaultSort || 0);
+            const defaultDirection = table.dataset.defaultDirection || 'desc';
+            const defaultButton = buttons[defaultIndex];
+            if (defaultButton) {
+                sortTable(table, defaultButton, defaultDirection);
+            }
         });
     </script>
 </body>
