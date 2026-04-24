@@ -1135,7 +1135,7 @@
                 <article class="track-card animate-on-scroll delay-2">
                     <div class="track-number">02</div>
                     <h3>Chart Understanding</h3>
-                    <p>This track focuses on recovering structured information from charts, generating grounded summaries, and identifying unsupported or hallucinated chart descriptions.</p>
+                    <p>This track focuses on two core chart understanding tasks: recovering structured chart data through chart-to-CSV extraction and generating grounded chart summaries through chart-to-summary generation.</p>
                 </article>
             </div>
         </section>
@@ -1225,10 +1225,10 @@
                         <tr>
                             <th scope="col">Rank</th>
                             <th scope="col">Team</th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Chart-to-CSV</span><span class="sort-indicator"></span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Summary Faithfulness</span><span class="sort-indicator"></span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Hallucination Detection</span><span class="sort-indicator"></span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Correction Quality</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>CSV Numeric F1</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>CSV Structural Score</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Summary ROUGE-L</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Summary Numeric Fact F1</span><span class="sort-indicator"></span></button></th>
                             <th scope="col"><button class="leaderboard-sort active" type="button" data-sort-type="number" data-sort-direction="desc"><span>Overall</span><span class="sort-indicator">↓</span></button></th>
                         </tr>
                     </thead>
@@ -1237,28 +1237,28 @@
                             <td><span class="rank-badge rank-1">1</span></td>
                             <td>Demo Team Delta</td>
                             <td class="score">90.8</td>
-                            <td class="score">88.9</td>
-                            <td class="score">92.0</td>
-                            <td class="score">86.4</td>
-                            <td class="score">89.5</td>
+                            <td class="score">89.6</td>
+                            <td class="score">87.9</td>
+                            <td class="score">91.2</td>
+                            <td class="score">89.9</td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge rank-2">2</span></td>
                             <td>Demo Team Epsilon</td>
                             <td class="score">88.7</td>
-                            <td class="score">87.6</td>
-                            <td class="score">90.5</td>
-                            <td class="score">84.2</td>
                             <td class="score">87.8</td>
+                            <td class="score">86.4</td>
+                            <td class="score">89.3</td>
+                            <td class="score">88.1</td>
                         </tr>
                         <tr>
                             <td><span class="rank-badge rank-3">3</span></td>
                             <td>Demo Team Zeta</td>
                             <td class="score">86.1</td>
-                            <td class="score">85.4</td>
-                            <td class="score">88.8</td>
-                            <td class="score">82.6</td>
                             <td class="score">85.7</td>
+                            <td class="score">84.9</td>
+                            <td class="score">87.5</td>
+                            <td class="score">86.1</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1279,7 +1279,7 @@
                 <article class="track-card animate-on-scroll delay-2">
                     <div class="track-number">02</div>
                     <h3>Chart Understanding Data</h3>
-                    <p>This newly prepared chart understanding dataset is based on <a href="https://huggingface.co/papers/2603.27064" style="color: var(--accent);" target="_blank" rel="noopener">ChartNet</a> and currently includes <strong>3,807 chart images</strong>, with <strong>2,000 synthetic</strong> samples and <strong>1,807 real-world</strong> samples. It is designed around four chart understanding tasks, including chart-to-CSV extraction, chart summarization, grounding/evidence localization, and hallucination detection/correction.</p>
+                    <p>This newly prepared chart understanding dataset is based on <a href="https://huggingface.co/papers/2603.27064" style="color: var(--accent);" target="_blank" rel="noopener">ChartNet</a> and currently includes <strong>3,807 chart images</strong>, with <strong>2,000 synthetic</strong> samples and <strong>1,807 real-world</strong> samples. For this challenge, the chart track focuses on two tasks: <strong>chart-to-CSV</strong> and <strong>chart-to-summary</strong>.</p>
                 </article>
             </div>
             <div class="btn-group" style="animation: none; opacity: 1;">
@@ -1291,7 +1291,7 @@
         <section id="submit" class="animate-on-scroll">
             <h2 class="section-title">Submission</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p><strong>Current public note:</strong> submission files are organized to match the structure of the two released challenge datasets. The document parsing track mirrors the document-folder layout, while the chart understanding track follows split-based JSONL prediction files for each task.</p>
+                <p><strong>Current public note:</strong> submission files are organized to match the structure of the two released challenge datasets. The document parsing track mirrors the document-folder layout, while the chart understanding track uses split-based JSONL prediction files for the two supported tasks: chart-to-CSV and chart-to-summary.</p>
             </div>
             <div class="submit-grid">
                 <div class="submit-card">
@@ -1339,26 +1339,23 @@ $$
                 </div>
                 <div class="submit-card">
                     <h3>Chart Understanding Submission</h3>
-                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the chart understanding track, organize submissions by split and task. Prediction files should follow the JSONL structure used by the current ChartNet-based evaluation pipeline:</p>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the chart understanding track, organize submissions by split and task. Prediction files should follow the JSONL structure used by the current ChartNet-based evaluation pipeline for chart-to-CSV and chart-to-summary:</p>
                     <div class="code-block">submission.zip
 ├── real/
 │   ├── chart2csv_predictions.jsonl
-│   ├── chart2summary_predictions.jsonl
-│   └── hallucination_predictions.jsonl
+│   └── chart2summary_predictions.jsonl
 └── synthetic/
     ├── chart2csv_predictions.jsonl
-    ├── chart2summary_predictions.jsonl
-    └── hallucination_predictions.jsonl
+    └── chart2summary_predictions.jsonl
 
 ─── Example JSONL lines ───
 {"imagename": "20150131_inc871_7.png", "predicted_csv": "Date,Value\n2011,100"}
-{"imagename": "20150131_inc871_7.png", "predicted_summary": "The chart shows ..."}
-{"imagename": "81bf0e86f01b81a9bda9a6030df8cc10.png", "statement": "This chart is a horizontal bar chart.", "predicted_label": "supported", "predicted_correction": ""}</div>
+{"imagename": "20150131_inc871_7.png", "predicted_summary": "The chart shows ..."}</div>
                     <div style="margin-top: 1.6rem; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
                         <strong style="color: var(--text-primary);">Format Rules:</strong><br>
                         • <strong>Split layout:</strong> Use separate <code style="font-family:'Space Mono',monospace;color:var(--accent)">real/</code> and <code style="font-family:'Space Mono',monospace;color:var(--accent)">synthetic/</code> directories.<br>
-                        • <strong>Task files:</strong> Provide JSONL predictions for chart-to-CSV, chart-to-summary, and hallucination detection/correction.<br>
-                        • <strong>Required keys:</strong> Use <code style="font-family:'Space Mono',monospace;color:var(--accent)">imagename</code> plus the corresponding prediction field such as <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_csv</code>, <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_summary</code>, <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_label</code>, and <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_correction</code>.<br>
+                        • <strong>Task files:</strong> Provide JSONL predictions for <code style="font-family:'Space Mono',monospace;color:var(--accent)">chart2csv</code> and <code style="font-family:'Space Mono',monospace;color:var(--accent)">chart2summary</code> only.<br>
+                        • <strong>Required keys:</strong> Use <code style="font-family:'Space Mono',monospace;color:var(--accent)">imagename</code> plus the corresponding prediction field such as <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_csv</code> or <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_summary</code>.<br>
                         • <strong>Alignment:</strong> Each JSONL entry must match the released chart image name and split.
                     </div>
                     <div style="margin-top: 2.4rem;">
