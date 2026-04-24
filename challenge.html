@@ -1291,15 +1291,21 @@
         <section id="submit" class="animate-on-scroll">
             <h2 class="section-title">Submission</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p><strong>Current public note:</strong> submission details are organized by challenge component. The document parsing track already follows the Markdown-based format for the newly prepared dataset based on OmniDocBench, while the chart understanding submission instructions based on ChartNet will be announced separately on this page.</p>
+                <p><strong>Current public note:</strong> submission files are organized to match the structure of the two released challenge datasets. The document parsing track mirrors the document-folder layout, while the chart understanding track follows split-based JSONL prediction files for each task.</p>
             </div>
             <div class="submit-grid">
                 <div class="submit-card">
                     <h3>Document Parsing Submission</h3>
-                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the document parsing track, submit predictions as Markdown files — one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per document page, packed in a <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive:</p>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the document parsing track, submit one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per page and preserve the same document-folder structure as the released dataset:</p>
                     <div class="code-block">submission.zip
-├── document_page_001.md   ← matches document_page_001.jpg
-├── document_page_002.md
+├── 00da2f04-2fd9-4ed2-a6e3-0839d06da691/
+│   ├── page_28.md   ← matches page_28.jpg
+│   ├── page_29.md
+│   └── ...
+├── 09933144-8982-4100-b18c-fa6dfacba7c7/
+│   ├── page_171.md
+│   ├── page_174.md
+│   └── ...
 └── ...
 
 ─── Example .md content ───
@@ -1323,6 +1329,8 @@ $$
 &lt;/table&gt;</div>
                     <div style="margin-top: 1.6rem; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
                         <strong style="color: var(--text-primary);">Format Rules:</strong><br>
+                        • <strong>Directory layout:</strong> Keep the same document folder names as the released images directory.<br>
+                        • <strong>File naming:</strong> Each prediction file must match the corresponding page image name (for example, <code style="font-family:'Space Mono',monospace;color:var(--accent)">page_28.jpg</code> → <code style="font-family:'Space Mono',monospace;color:var(--accent)">page_28.md</code>).<br>
                         • <strong>Text:</strong> Standard Markdown. Paragraphs separated by double newlines (<code style="font-family:'Space Mono',monospace;color:var(--accent)">\n\n</code>). Headings with <code style="font-family:'Space Mono',monospace;color:var(--accent)">#</code>.<br>
                         • <strong>Formulas:</strong> Display formulas in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$$...$$</code>, inline in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$...$</code>. Content must be LaTeX.<br>
                         • <strong>Tables:</strong> HTML <code style="font-family:'Space Mono',monospace;color:var(--accent)">&lt;table&gt;</code> format (recommended for merged cells) or Markdown pipe tables.<br>
@@ -1330,13 +1338,29 @@ $$
                     </div>
                 </div>
                 <div class="submit-card">
-                    <h3>Track-specific Instructions</h3>
-                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 1.6rem;">Submission instructions will be released separately for the two challenge components:</p>
-                    <ol>
-                        <li><strong>Document Parsing (based on OmniDocBench):</strong> Markdown-based page-level submission, packaged as a single <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> file</li>
-                        <li><strong>Chart Understanding (based on ChartNet):</strong> task-specific submission instructions will be announced together with the chart track release materials</li>
-                        <li>All official submission links and evaluation entry points will be posted on the challenge website</li>
-                    </ol>
+                    <h3>Chart Understanding Submission</h3>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the chart understanding track, organize submissions by split and task. Prediction files should follow the JSONL structure used by the current ChartNet-based evaluation pipeline:</p>
+                    <div class="code-block">submission.zip
+├── real/
+│   ├── chart2csv_predictions.jsonl
+│   ├── chart2summary_predictions.jsonl
+│   └── hallucination_predictions.jsonl
+└── synthetic/
+    ├── chart2csv_predictions.jsonl
+    ├── chart2summary_predictions.jsonl
+    └── hallucination_predictions.jsonl
+
+─── Example JSONL lines ───
+{"imagename": "20150131_inc871_7.png", "predicted_csv": "Date,Value\n2011,100"}
+{"imagename": "20150131_inc871_7.png", "predicted_summary": "The chart shows ..."}
+{"imagename": "81bf0e86f01b81a9bda9a6030df8cc10.png", "statement": "This chart is a horizontal bar chart.", "predicted_label": "supported", "predicted_correction": ""}</div>
+                    <div style="margin-top: 1.6rem; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
+                        <strong style="color: var(--text-primary);">Format Rules:</strong><br>
+                        • <strong>Split layout:</strong> Use separate <code style="font-family:'Space Mono',monospace;color:var(--accent)">real/</code> and <code style="font-family:'Space Mono',monospace;color:var(--accent)">synthetic/</code> directories.<br>
+                        • <strong>Task files:</strong> Provide JSONL predictions for chart-to-CSV, chart-to-summary, and hallucination detection/correction.<br>
+                        • <strong>Required keys:</strong> Use <code style="font-family:'Space Mono',monospace;color:var(--accent)">imagename</code> plus the corresponding prediction field such as <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_csv</code>, <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_summary</code>, <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_label</code>, and <code style="font-family:'Space Mono',monospace;color:var(--accent)">predicted_correction</code>.<br>
+                        • <strong>Alignment:</strong> Each JSONL entry must match the released chart image name and split.
+                    </div>
                     <div style="margin-top: 2.4rem;">
                         <a href="https://eval.ai/web/challenges/list" class="btn-2077" target="_blank" rel="noopener">Submit on EvalAI</a>
                     </div>
