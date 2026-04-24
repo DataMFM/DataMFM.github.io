@@ -1081,9 +1081,9 @@
     <section class="hero">
         <div class="hero-content">
             <h1>DataMFM</h1>
-            <p class="hero-tagline">Two Challenges: OmniDocBench-Pro + ChartNet-Bench</p>
+            <p class="hero-tagline">Two Challenge Tracks: Document Parsing + Chart Understanding</p>
             <p class="hero-desc">
-                The DataMFM Challenge website currently hosts two benchmark tracks: <strong>OmniDocBench-Pro</strong> for document parsing and <strong>ChartNet-Bench</strong> for chart understanding. Together, they target multimodal document understanding across natural text, tables, formulas, layouts, and charts.
+                The DataMFM Challenge uses two newly prepared challenge datasets based on <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> and <a href="https://huggingface.co/papers/2603.27064" style="color: var(--accent);" target="_blank" rel="noopener">ChartNet</a>. Together, the two tracks target multimodal document understanding across natural text, tables, formulas, layouts, and charts.
             </p>
             <div class="countdown" aria-label="Countdown to May 29 target date">
                 <div class="countdown-item">
@@ -1114,10 +1114,10 @@
         <section id="overview" class="animate-on-scroll">
             <h2 class="section-title">Overview</h2>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem; margin-bottom: 2.4rem;">
-                The DataMFM Challenge focuses on multimodal document understanding at the intersection of vision, language, and structured reasoning. The challenge website currently includes two components: <strong>OmniDocBench-Pro</strong> for end-to-end document parsing and <strong>ChartNet-Bench</strong> for chart understanding.
+                The DataMFM Challenge focuses on multimodal document understanding at the intersection of vision, language, and structured reasoning. For this challenge, we prepare two new datasets based on <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> and <a href="https://huggingface.co/papers/2603.27064" style="color: var(--accent);" target="_blank" rel="noopener">ChartNet</a>, corresponding to document parsing and chart understanding.
             </p>
             <p style="max-width: 80rem; font-size: 1.6rem; color: var(--text-secondary); line-height: 2.8rem;">
-                These two components are designed to cover complementary capabilities: extracting structured content from document pages and understanding chart-centric visual information. This challenge is part of the <a href="https://datamfm.github.io/" style="color: var(--accent);">Emerging Directions in Data for Multimodal Foundation Models (DataMFM)</a> workshop at CVPR 2026.
+                These two challenge components are designed to cover complementary capabilities: extracting structured content from document pages and understanding chart-centric visual information. This challenge is part of the <a href="https://datamfm.github.io/" style="color: var(--accent);">Emerging Directions in Data for Multimodal Foundation Models (DataMFM)</a> workshop at CVPR 2026.
             </p>
         </section>
 
@@ -1130,12 +1130,12 @@
                 <article class="track-card animate-on-scroll delay-1">
                     <div class="track-number">01</div>
                     <h3>Document Parsing</h3>
-                    <p>Based on <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> and its extension <strong>OmniDocBench-Pro</strong>, this part focuses on recovering complete document content from page images, including natural text, tables, formulas, and layout-aware structure.</p>
+                    <p>This track uses a newly prepared challenge dataset based on <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a>. It focuses on recovering complete document content from page images, including natural text, tables, formulas, and layout-aware structure.</p>
                 </article>
                 <article class="track-card animate-on-scroll delay-2">
                     <div class="track-number">02</div>
                     <h3>Chart Understanding</h3>
-                    <p>Powered by <strong>ChartNet-Bench</strong>, this track evaluates how well models understand charts in a faithful and usable way. It focuses on recovering structured chart data, generating grounded chart summaries, and identifying unsupported or hallucinated chart descriptions for more reliable chart-centric reasoning.</p>
+                    <p>This track uses a newly prepared challenge dataset based on <a href="https://huggingface.co/papers/2603.27064" style="color: var(--accent);" target="_blank" rel="noopener">ChartNet</a>. It focuses on recovering structured chart data, generating grounded chart summaries, and identifying unsupported or hallucinated chart descriptions for more reliable chart-centric reasoning.</p>
                 </article>
             </div>
         </section>
@@ -1268,18 +1268,18 @@
         <section id="data" class="animate-on-scroll">
             <h2 class="section-title">Dataset</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p>The challenge dataset is organized around two complementary components: <strong>OmniDocBench-Pro</strong> for document parsing and <strong>ChartNet-Bench</strong> for chart understanding. Public release materials are being prepared and the access links below will be updated as they are finalized.</p>
+                <p>The challenge dataset is organized around two newly prepared components based on <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> and <a href="https://huggingface.co/papers/2603.27064" style="color: var(--accent);" target="_blank" rel="noopener">ChartNet</a>. Public release materials are provided below for the document parsing and chart understanding tracks.</p>
             </div>
             <div class="tracks-grid" style="margin-bottom: 3.2rem;">
                 <article class="track-card animate-on-scroll delay-1">
                     <div class="track-number">01</div>
                     <h3>Document Parsing Data</h3>
-                    <p>Based on the current <strong>OmniDocBench-Pro</strong> release package, this component includes <strong>1,005 page images</strong> organized under <strong>89 document folders</strong>. It is designed for page-level document parsing with supervision over text, tables, formulas, layout structure, and reading order.</p>
+                    <p>This newly prepared document parsing dataset is based on <a href="https://github.com/opendatalab/OmniDocBench" style="color: var(--accent);" target="_blank" rel="noopener">OmniDocBench</a> and currently includes <strong>1,005 page images</strong> organized under <strong>89 document folders</strong>. It supports page-level parsing with supervision over text, tables, formulas, layout structure, and reading order.</p>
                 </article>
                 <article class="track-card animate-on-scroll delay-2">
                     <div class="track-number">02</div>
                     <h3>Chart Understanding Data</h3>
-                    <p>Based on <strong>ChartNet-Bench</strong>, this component currently includes <strong>3,807 chart images</strong>, with <strong>2,000 synthetic</strong> samples and <strong>1,807 real-world</strong> samples. It is designed around four chart understanding tasks, including chart-to-CSV extraction, chart summarization, grounding/evidence localization, and hallucination detection/correction.</p>
+                    <p>This newly prepared chart understanding dataset is based on <a href="https://huggingface.co/papers/2603.27064" style="color: var(--accent);" target="_blank" rel="noopener">ChartNet</a> and currently includes <strong>3,807 chart images</strong>, with <strong>2,000 synthetic</strong> samples and <strong>1,807 real-world</strong> samples. It is designed around four chart understanding tasks, including chart-to-CSV extraction, chart summarization, grounding/evidence localization, and hallucination detection/correction.</p>
                 </article>
             </div>
             <div class="btn-group" style="animation: none; opacity: 1;">
@@ -1291,7 +1291,7 @@
         <section id="submit" class="animate-on-scroll">
             <h2 class="section-title">Submission</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p><strong>Current public note:</strong> submission details are being organized by challenge component. The document parsing track already follows the Markdown-based OmniDocBench-Pro format below, while ChartNet-Bench submission instructions will be announced separately on this page.</p>
+                <p><strong>Current public note:</strong> submission details are organized by challenge component. The document parsing track already follows the Markdown-based format for the newly prepared dataset based on OmniDocBench, while the chart understanding submission instructions based on ChartNet will be announced separately on this page.</p>
             </div>
             <div class="submit-grid">
                 <div class="submit-card">
@@ -1333,8 +1333,8 @@ $$
                     <h3>Track-specific Instructions</h3>
                     <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 1.6rem;">Submission instructions will be released separately for the two challenge components:</p>
                     <ol>
-                        <li><strong>OmniDocBench-Pro / Document Parsing:</strong> Markdown-based page-level submission, packaged as a single <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> file</li>
-                        <li><strong>ChartNet-Bench / Chart Understanding:</strong> task-specific submission instructions will be announced together with the chart track release materials</li>
+                        <li><strong>Document Parsing (based on OmniDocBench):</strong> Markdown-based page-level submission, packaged as a single <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> file</li>
+                        <li><strong>Chart Understanding (based on ChartNet):</strong> task-specific submission instructions will be announced together with the chart track release materials</li>
                         <li>All official submission links and evaluation entry points will be posted on the challenge website</li>
                     </ol>
                     <div style="margin-top: 2.4rem;">
