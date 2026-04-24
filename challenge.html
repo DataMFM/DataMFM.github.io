@@ -1175,13 +1175,13 @@
                 <table class="leaderboard-table sortable-table" data-default-sort="6" data-default-direction="desc">
                     <thead>
                         <tr>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="rank"><span>Rank</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="text"><span>Team</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="asc"><span>Text ED ↓</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Table TEDS ↑</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Formula CDM ↑</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Reading Order ↑</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort active" type="button" data-sort-type="number" data-sort-direction="desc"><span>Overall ↑</span><span class="sort-indicator">↓</span></button></th>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Team</th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="asc"><span>Text ED</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Table TEDS</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Formula CDM</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Reading Order</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort active" type="button" data-sort-type="number" data-sort-direction="desc"><span>Overall</span><span class="sort-indicator">↓</span></button></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1223,13 +1223,13 @@
                 <table class="leaderboard-table sortable-table" data-default-sort="6" data-default-direction="desc">
                     <thead>
                         <tr>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="rank"><span>Rank</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="text"><span>Team</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Chart-to-CSV ↑</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Summary Faithfulness ↑</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Hallucination Detection ↑</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Correction Quality ↑</span><span class="sort-indicator">↕</span></button></th>
-                            <th scope="col"><button class="leaderboard-sort active" type="button" data-sort-type="number" data-sort-direction="desc"><span>Overall ↑</span><span class="sort-indicator">↓</span></button></th>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Team</th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Chart-to-CSV</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Summary Faithfulness</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Hallucination Detection</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort" type="button" data-sort-type="number" data-sort-direction="desc"><span>Correction Quality</span><span class="sort-indicator"></span></button></th>
+                            <th scope="col"><button class="leaderboard-sort active" type="button" data-sort-type="number" data-sort-direction="desc"><span>Overall</span><span class="sort-indicator">↓</span></button></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1499,7 +1499,7 @@ $$
             table.querySelectorAll('.leaderboard-sort').forEach(button => {
                 button.classList.remove('active');
                 const indicator = button.querySelector('.sort-indicator');
-                if (indicator) indicator.textContent = '↕';
+                if (indicator) indicator.textContent = '';
             });
             activeButton.classList.add('active');
             const activeIndicator = activeButton.querySelector('.sort-indicator');
