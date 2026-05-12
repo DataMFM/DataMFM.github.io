@@ -218,16 +218,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto main-nav">
                     <li class="nav-item active"> <a class="nav-link" href="#overview">Home</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="#call">Calls</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="#dates">Dates</a> </li>
-                    <!-- <li class="nav-item"> <a class="nav-link " href="#schedule">Schedule</a> </li> -->
-                    <!-- <li class="nav-item"> <a class="nav-link " href="#speakers">Speakers</a> </li> -->
                     <li class="nav-item"> <a class="nav-link " href="#challenge">Challenge</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="#call">Calls</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="#papers">Papers</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="#dates">Dates</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="#organizers">Organizers</a> </li>
-                    <!-- <li class="nav-item"> <a class="nav-link " href="#paper">Papers</a> </li> -->
                     <li class="nav-item"> <a class="nav-link " href="#sponsors">Sponsors</a> </li>
-                    <!-- <li class="nav-item"> <a class="nav-link " href="#committee">Committee</a> </li> -->
-                    <!-- <li class="nav-item"> <a class="nav-link " href="#previous">Previous</a> </li> -->
                   </ul>
 
                 </div>
@@ -241,12 +237,12 @@
   <!--==========================================
   =            Overview Section            =
   ===========================================-->
-  
-  <section class="popular-deals section bg-gray"> 
+
+  <section class="popular-deals section bg-gray">
     <!-- Container Start -->
     <div class="container">
       <div class="row">
-        <div class="col-md-12"> 
+        <div class="col-md-12">
           <!-- Section title -->
           <div class="section-title">
             <h1>Workshop on Emerging Directions in Data for Multimodal Foundation Models
@@ -256,7 +252,7 @@
       <h4>Workshop at CVPR 2026</h4>
       <h4>June 3, 2026 | 1:00 PM – 6:00 PM | Room 111</h4>
       <br>
-            <h2 id="overivew">Overview</h2>
+            <h2 id="overview">Overview</h2>
           </div>
           The Emerging Directions in Data for Multimodal Foundation Models (DataMFM) workshop focuses on advancing the data foundations of multimodal AI systems. While text data has benefited from decades of large-scale curation and standardization, multimodal data—spanning images, documents, video, audio, and cross-modal pairings—continues to face fundamental challenges in quality, diversity, coverage, and reproducibility.
           This workshop examines emerging research directions that move beyond brute-force web-scale data collection, including the transition from web-scale to world-scale data, agentic and self-generated data pipelines, and principled data selection and mixture design. Core topics include data contamination and provenance, benchmark construction and renewal, multimodal alignment across heterogeneous modalities, and evaluation practices that remain robust as models and datasets evolve.
@@ -264,16 +260,44 @@
       </div>
     </div>
   </section>
-  
+
+
+    <!-- ==========================================
+  =            Challenge Section            =
+  ===========================================-->
+
+   <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h2 id="challenge">DataMFM Challenge</h2>
+          </div>
+          The DataMFM Challenge focuses on multimodal document understanding at the intersection of vision, language, and structured reasoning. It currently covers two complementary components: <strong>Document Parsing</strong> and <strong>Chart Understanding</strong>, based on newly prepared challenge datasets built from <a href="https://github.com/opendatalab/OmniDocBench" style="color: #007bff;" target="_blank" rel="noopener"><strong>OmniDocBench</strong></a> and <a href="https://huggingface.co/papers/2603.27064" style="color: #007bff;" target="_blank" rel="noopener"><strong>ChartNet</strong></a>.
+          <br>
+            <strong>Scope</strong>:
+            Document Parsing + Chart Understanding. <br>
+
+            <strong>Timeline</strong>:
+            Apr 27 Release · May 11 Submission Opening · May 29 Submission Deadline · Jun 03 Workshop. <br>
+
+            <strong>Challenge Portal</strong>:
+            <a href="challenge.html" style="color: #007bff;">DataMFM Challenge Portal →</a>
+
+  </div>
+  </div>
+    </div>
+   </section>
+
 
     <!--==========================================
   =            Call for Papers Section            =
   ===========================================-->
-  
-  <section class="section"> 
+
+  <section class="section bg-gray">
     <div class="container">
       <div class="row">
-        <div class="col-12"> 
+        <div class="col-12">
           <div class="section-title">
             <h2 id="call">Call for Papers</h2>
           </div>
@@ -296,7 +320,7 @@ models</li>
         <li>Building sustainable, transparent, and community-driven multimodal data ecosystems for next generation
 foundation models</li>
       </div>
-      
+
     </ul>
     <strong>Submission Guidelines</strong>: <br>
     The workshop accepts submissions in three tracks:<br>
@@ -304,7 +328,7 @@ foundation models</li>
     <strong>(2) Short Papers / Extended Abstracts (Non-archival)</strong>: Up to 4 pages, excluding references; Double-blind review; Intended for work-in-progress, datasets, benchmarks, and early-stage ideas;<br>
     <strong>(3) CVPR 2026 Accepted Papers (Non-archival, Non-anonymous)</strong>: Papers accepted to the main CVPR 2026 conference; Presented at the workshop but not included in the workshop proceedings
         <br>
-        <strong>Submission Site</strong>: 
+        <strong>Submission Site</strong>:
        <strong>Proceedings Track</strong>: <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/DataMFM_Proceedings_Track" target="_blank" rel="noopener noreferrer" style="color:blue;">
         https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/DataMFM_Proceedings_Track</a><br>
        <strong>Non-archival Track</strong>: <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/DataMFM_Non-archival" target="_blank" rel="noopener noreferrer" style="color:blue;">
@@ -317,10 +341,46 @@ foundation models</li>
   </section>
 
 
+  <!--==========================================
+  =            Accepted Papers Section            =
+  ===========================================-->
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h2 id="papers">Accepted Papers</h2>
+          </div>
+
+          <h4>Proceedings Track</h4>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-1 &nbsp; VLA-AD: Agentic Vision-Language Foundation Models for Context-Aware Anomaly Detection</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-3 &nbsp; Scalable Parallel Prompting for Complex AV Video Captioning</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-5 &nbsp; Adversarial Feedback from Segmentation Network to Siamese Diffusion for Improving Tumor Segmentation</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-8 &nbsp; AdGaze-3500: Evaluating Large Multimodal Models' Ability to Predict Human Attention to Ads</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-9 &nbsp; TimeCausality: Evaluating the Causal Ability in Time Dimension for Vision Language Models</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-10 &nbsp; Uncertainty-Guided Data Curation for 3D Object Detection</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-11 &nbsp; Longitudinal Multimodal Modeling for Alzheimer's Disease with Pre-trained Brain Latent Diffusion and Mixture-of-Experts Fusion</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-12 &nbsp; Learning Multimodal Priors with Shared Vector Quantization for Incomplete Multimodal Diagnosis</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-13 &nbsp; VLM Reality Check: A Causal Counterfactual Benchmark for Diagnosing Cognitive Biases in Vision-Language Models</span></li>
+            <li style="margin-bottom: 4px;"><span style="color: #000000; font-weight: normal;">DataMFM-19 &nbsp; Cin&#233;aste: A Fine-grained Contextual Movie Question Answering Benchmark with Automated Data Curation</span></li>
+          </ul>
+
+          <h4 style="margin-top: 20px;">Non-archival Track</h4>
+          <p style="color: #000000;">To be announced.</p>
+
+          <p style="margin-top: 20px;"><strong>Poster Printing:</strong> Please follow the instructions to print your posters. <a href="https://cvpr.thecvf.com/Conferences/2026/PosterPrinting" target="_blank" rel="noopener noreferrer" style="color: blue;">https://cvpr.thecvf.com/Conferences/2026/PosterPrinting</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!--===========================================
   =            Important Dates            =
   ============================================-->
-  
+
   <section class="section bg-gray">
     <div class="container">
       <div class="row">
@@ -357,45 +417,19 @@ foundation models</li>
     </div>
   </section>
 
-
-    <!-- ==========================================
-  =            Challenge Section            =
-  ===========================================-->
-  
-   <section class="section"> 
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title">
-            <h2 id="challenge">DataMFM Challenge</h2>
-          </div>
-          The DataMFM Challenge focuses on multimodal document understanding at the intersection of vision, language, and structured reasoning. It currently covers two complementary components: <strong>Document Parsing</strong> and <strong>Chart Understanding</strong>, based on newly prepared challenge datasets built from <a href="https://github.com/opendatalab/OmniDocBench" style="color: #007bff;" target="_blank" rel="noopener"><strong>OmniDocBench</strong></a> and <a href="https://huggingface.co/papers/2603.27064" style="color: #007bff;" target="_blank" rel="noopener"><strong>ChartNet</strong></a>.
-          <br>
-            <strong>Scope</strong>:
-            Document Parsing + Chart Understanding. <br>
-          
-            <strong>Timeline</strong>:
-            Apr 27 Release · May 11 Submission Opening · May 29 Submission Deadline · Jun 03 Workshop. <br>
-          
-            <strong>Challenge Portal</strong>: 
-            <a href="challenge.html" style="color: #007bff;">DataMFM Challenge Portal →</a>
-    
-  </div>
-  </div>
-    </div>
-   </section>
-
 <!--==========================================
 =            Organizers Section            =
 ===========================================-->
 
-        <section class="section bg-gray">
+        <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
         <div class="section-title">
           <h2 id="pubc">Challenge Organizers</h2>
         </div>
 
-
-        <div class="card-deck" style="justify-content: center; display: flex; flex-wrap: wrap; width: 100%; margin: 0 auto;"> 
+        <div class="card-deck" style="justify-content: center; display: flex; flex-wrap: wrap; width: 100%; margin: 0 auto;">
           <div class="card" style="min-width: 200px; max-width: 250px; margin: 10px; flex: 0 0 calc(25% - 20px); padding: 0;">
             <div class="category-block" style="height: 100%; width: 100%; padding: 8px;">
               <table width="100%" border="0" align="center">
@@ -501,6 +535,9 @@ foundation models</li>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
             </div>
           </div>
         </div>
@@ -679,10 +716,10 @@ foundation models</li>
 =            Sponsors Section            =
 ===========================================-->
 
- <section class="section">
+ <section class="section bg-gray">
     <div class="container">
       <div class="row">
-        <div class="col-12"> 
+        <div class="col-12">
           <div class="section-title">
             <h2 id="sponsors">Sponsors</h2>
         </div>
