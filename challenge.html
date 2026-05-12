@@ -1315,24 +1315,20 @@
         <section id="submit" class="animate-on-scroll">
             <h2 class="section-title">Submission</h2>
             <div class="info-box" style="margin-bottom: 3.2rem;">
-                <p><strong>Current public note:</strong> submission files are organized to match the structure of the two released challenge datasets. The document parsing track mirrors the document-folder layout, while the chart understanding track uses split-based JSONL prediction files for the two supported tasks: chart-to-CSV and chart-to-summary.</p>
+                <p><strong>Current public note:</strong> submission files are organized to match the structure of the two released challenge datasets. The document parsing track uses flat, document-level Markdown files, while the chart understanding track uses split-based JSONL prediction files for the two supported tasks: chart-to-CSV and chart-to-summary.</p>
             </div>
             <div class="submit-grid">
                 <div class="submit-card">
                     <h3>Document Parsing Submission</h3>
-                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the document parsing track, submit one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per page and preserve the same document-folder structure as the released dataset:</p>
+                    <p style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem;">For the document parsing track, submit one document-level <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per document. The <code style="font-family:'Space Mono',monospace;color:var(--accent)">.zip</code> archive should be flat and contain <strong>89 Markdown files</strong>, with each filename matching the corresponding document UUID in the ground truth:</p>
                     <div class="code-block">submission.zip
-├── 00da2f04-2fd9-4ed2-a6e3-0839d06da691/
-│   ├── page_28.md   ← matches page_28.jpg
-│   ├── page_29.md
-│   └── ...
-├── 09933144-8982-4100-b18c-fa6dfacba7c7/
-│   ├── page_171.md
-│   ├── page_174.md
-│   └── ...
+├── 00000000-0000-0000-0000-000000000001.md
+├── 00000000-0000-0000-0000-000000000002.md
+├── 00da2f04-2fd9-4ed2-a6e3-0839d06da691.md
+├── 09933144-8982-4100-b18c-fa6dfacba7c7.md
 └── ...
 
-─── Example .md content ───
+─── Example document-level .md content ───
 
 # Section Title
 
@@ -1353,12 +1349,14 @@ $$
 &lt;/table&gt;</div>
                     <div style="margin-top: 1.6rem; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
                         <strong style="color: var(--text-primary);">Format Rules:</strong><br>
-                        • <strong>Directory layout:</strong> Keep the same document folder names as the released images directory.<br>
-                        • <strong>File naming:</strong> Each prediction file must match the corresponding page image name (for example, <code style="font-family:'Space Mono',monospace;color:var(--accent)">page_28.jpg</code> → <code style="font-family:'Space Mono',monospace;color:var(--accent)">page_28.md</code>).<br>
+                        • <strong>Archive layout:</strong> Keep the archive flat. Do not wrap the Markdown files inside an extra top-level directory.<br>
+                        • <strong>File count:</strong> Submit one <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file per document, for <strong>89 document-level Markdown files</strong> in total.<br>
+                        • <strong>File naming:</strong> Each prediction file must match the corresponding document UUID in the ground truth, for example <code style="font-family:'Space Mono',monospace;color:var(--accent)">00da2f04-2fd9-4ed2-a6e3-0839d06da691.md</code>.<br>
+                        • <strong>Validation:</strong> Submissions with missing filenames, extra filenames, or an extra wrapper directory may fail validation.<br>
                         • <strong>Text:</strong> Standard Markdown. Paragraphs separated by double newlines (<code style="font-family:'Space Mono',monospace;color:var(--accent)">\n\n</code>). Headings with <code style="font-family:'Space Mono',monospace;color:var(--accent)">#</code>.<br>
                         • <strong>Formulas:</strong> Display formulas in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$$...$$</code>, inline in <code style="font-family:'Space Mono',monospace;color:var(--accent)">$...$</code>. Content must be LaTeX.<br>
-                        • <strong>Tables:</strong> HTML <code style="font-family:'Space Mono',monospace;color:var(--accent)">&lt;table&gt;</code> format (recommended for merged cells) or Markdown pipe tables.<br>
-                        • <strong>Order:</strong> Elements must appear in reading order — the eval script uses element position in the file as the predicted reading order.
+                        • <strong>Tables:</strong> HTML <code style="font-family:'Space Mono',monospace;color:var(--accent)">&lt;table&gt;</code> format is recommended for merged cells; Markdown pipe tables are also accepted.<br>
+                        • <strong>Order:</strong> Elements should appear in natural reading order within each document-level <code style="font-family:'Space Mono',monospace;color:var(--accent)">.md</code> file.
                     </div>
                 </div>
                 <div class="submit-card">
