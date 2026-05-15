@@ -1,0 +1,41 @@
+{
+    "schema_version": 1,
+    "generated_at": "2026-05-15T02:56:03.386894Z",
+    "policy": {
+        "public_only": true,
+        "best_per_team": true,
+        "hidden_team_patterns": [
+            "host",
+            "datamfm",
+            "aaron_luo_test"
+        ]
+    },
+    "source": {
+        "submissions_root": "/root/datamfm-test/submissions",
+        "successful_public_records": 3
+    },
+    "leaderboards": {
+        "doc": [],
+        "chart": [
+            {
+                "task": "chart",
+                "submission_id": "570457",
+                "team_id": 41379,
+                "team": "xxxyyy",
+                "phase": "dev",
+                "submitted_at": "2026-05-13T12:06:37.206977Z",
+                "model_name": "Granite-vision-4.1-4b",
+                "model_type": "End-to-End VLM",
+                "external_data": "True",
+                "scores": {
+                    "CSV_Numeric_F1": 79.13,
+                    "CSV_Structural_Score": 75.94,
+                    "Summary_ROUGE_L": 44.25,
+                    "Summary_Numeric_Fact_F1": 72.29,
+                    "Overall": 67.9
+                },
+                "rank": 1
+            }
+        ]
+    }
+}
