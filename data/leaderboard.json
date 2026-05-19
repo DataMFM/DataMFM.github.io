@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "generated_at": "2026-05-15T02:56:03.386894Z",
+    "generated_at": "2026-05-19T21:40:39.941990Z",
     "policy": {
         "public_only": true,
         "best_per_team": true,
@@ -12,10 +12,30 @@
     },
     "source": {
         "submissions_root": "/root/datamfm-test/submissions",
-        "successful_public_records": 3
+        "successful_public_records": 7
     },
     "leaderboards": {
-        "doc": [],
+        "doc": [
+            {
+                "task": "doc",
+                "submission_id": "570646",
+                "team_id": 41431,
+                "team": "hskl18",
+                "phase": "dev",
+                "submitted_at": "2026-05-16T10:07:51.521710Z",
+                "model_name": "Tesseract PSM3-PSM6 Hybrid",
+                "model_type": "Pipeline",
+                "external_data": false,
+                "scores": {
+                    "Text_ED": 0.3914,
+                    "Table_TEDS": 0.61,
+                    "Formula_CDM": 0.0,
+                    "Reading_Order": 50.86,
+                    "Overall": 28.08
+                },
+                "rank": 1
+            }
+        ],
         "chart": [
             {
                 "task": "chart",
@@ -35,6 +55,44 @@
                     "Overall": 67.9
                 },
                 "rank": 1
+            },
+            {
+                "task": "chart",
+                "submission_id": "570852",
+                "team_id": 41426,
+                "team": "ytttttt",
+                "phase": "dev",
+                "submitted_at": "2026-05-18T15:46:03.304946Z",
+                "model_name": "Qwen2.5-VL-7B/32B Chart Pipeline",
+                "model_type": "Hybrid",
+                "external_data": "True",
+                "scores": {
+                    "CSV_Numeric_F1": 56.47,
+                    "CSV_Structural_Score": 50.03,
+                    "Summary_ROUGE_L": 24.82,
+                    "Summary_Numeric_Fact_F1": 46.92,
+                    "Overall": 44.56
+                },
+                "rank": 2
+            },
+            {
+                "task": "chart",
+                "submission_id": "570648",
+                "team_id": 41431,
+                "team": "hskl18",
+                "phase": "dev",
+                "submitted_at": "2026-05-16T10:18:21.474928Z",
+                "model_name": "Tesseract-ChartNet-OpenAI25 Hybrid",
+                "model_type": "Hybrid",
+                "external_data": true,
+                "scores": {
+                    "CSV_Numeric_F1": 34.53,
+                    "CSV_Structural_Score": 27.05,
+                    "Summary_ROUGE_L": 18.27,
+                    "Summary_Numeric_Fact_F1": 48.77,
+                    "Overall": 32.16
+                },
+                "rank": 3
             }
         ]
     }
