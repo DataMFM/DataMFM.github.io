@@ -1,99 +1,156 @@
 {
-    "schema_version": 1,
-    "generated_at": "2026-05-19T21:40:39.941990Z",
-    "policy": {
-        "public_only": true,
-        "best_per_team": true,
-        "hidden_team_patterns": [
-            "host",
-            "datamfm",
-            "aaron_luo_test"
-        ]
-    },
-    "source": {
-        "submissions_root": "/root/datamfm-test/submissions",
-        "successful_public_records": 7
-    },
-    "leaderboards": {
-        "doc": [
-            {
-                "task": "doc",
-                "submission_id": "570646",
-                "team_id": 41431,
-                "team": "hskl18",
-                "phase": "dev",
-                "submitted_at": "2026-05-16T10:07:51.521710Z",
-                "model_name": "Tesseract PSM3-PSM6 Hybrid",
-                "model_type": "Pipeline",
-                "external_data": false,
-                "scores": {
-                    "Text_ED": 0.3914,
-                    "Table_TEDS": 0.61,
-                    "Formula_CDM": 0.0,
-                    "Reading_Order": 50.86,
-                    "Overall": 28.08
-                },
-                "rank": 1
-            }
-        ],
-        "chart": [
-            {
-                "task": "chart",
-                "submission_id": "570457",
-                "team_id": 41379,
-                "team": "xxxyyy",
-                "phase": "dev",
-                "submitted_at": "2026-05-13T12:06:37.206977Z",
-                "model_name": "Granite-vision-4.1-4b",
-                "model_type": "End-to-End VLM",
-                "external_data": "True",
-                "scores": {
-                    "CSV_Numeric_F1": 79.13,
-                    "CSV_Structural_Score": 75.94,
-                    "Summary_ROUGE_L": 44.25,
-                    "Summary_Numeric_Fact_F1": 72.29,
-                    "Overall": 67.9
-                },
-                "rank": 1
-            },
-            {
-                "task": "chart",
-                "submission_id": "570852",
-                "team_id": 41426,
-                "team": "ytttttt",
-                "phase": "dev",
-                "submitted_at": "2026-05-18T15:46:03.304946Z",
-                "model_name": "Qwen2.5-VL-7B/32B Chart Pipeline",
-                "model_type": "Hybrid",
-                "external_data": "True",
-                "scores": {
-                    "CSV_Numeric_F1": 56.47,
-                    "CSV_Structural_Score": 50.03,
-                    "Summary_ROUGE_L": 24.82,
-                    "Summary_Numeric_Fact_F1": 46.92,
-                    "Overall": 44.56
-                },
-                "rank": 2
-            },
-            {
-                "task": "chart",
-                "submission_id": "570648",
-                "team_id": 41431,
-                "team": "hskl18",
-                "phase": "dev",
-                "submitted_at": "2026-05-16T10:18:21.474928Z",
-                "model_name": "Tesseract-ChartNet-OpenAI25 Hybrid",
-                "model_type": "Hybrid",
-                "external_data": true,
-                "scores": {
-                    "CSV_Numeric_F1": 34.53,
-                    "CSV_Structural_Score": 27.05,
-                    "Summary_ROUGE_L": 18.27,
-                    "Summary_Numeric_Fact_F1": 48.77,
-                    "Overall": 32.16
-                },
-                "rank": 3
-            }
-        ]
-    }
+  "schema_version": 1,
+  "generated_at": "2026-05-21T06:46:00.595035Z",
+  "policy": {
+    "public_only": true,
+    "best_per_team": true,
+    "hidden_team_patterns": [
+      "host",
+      "datamfm",
+      "aaron_luo_test"
+    ]
+  },
+  "source": {
+    "submissions_root": "/root/datamfm-test/submissions",
+    "successful_public_records": 21
+  },
+  "leaderboards": {
+    "doc": [
+      {
+        "task": "doc",
+        "submission_id": "571256",
+        "team_id": 41473,
+        "team": "ablxiaorong",
+        "phase": "dev",
+        "submitted_at": "2026-05-21T02:36:32.933493Z",
+        "model_name": "Mineru",
+        "model_type": "End-to-End VLM",
+        "external_data": "False",
+        "scores": {
+          "Text_ED": 0.1558,
+          "Table_TEDS": 85.41,
+          "Formula_CDM": 0.25,
+          "Reading_Order": 70.59,
+          "Overall": 60.17
+        },
+        "rank": 1
+      },
+      {
+        "task": "doc",
+        "submission_id": "570712",
+        "team_id": 41380,
+        "team": "nogacablous",
+        "phase": "test",
+        "submitted_at": "2026-05-17T08:51:45.440684Z",
+        "model_name": "MinerU",
+        "model_type": "End-to-End VLM",
+        "external_data": "False",
+        "scores": {
+          "Text_ED": 0.1559,
+          "Table_TEDS": 85.41,
+          "Formula_CDM": 0.15,
+          "Reading_Order": 70.59,
+          "Overall": 60.14
+        },
+        "rank": 2
+      },
+      {
+        "task": "doc",
+        "submission_id": "570730",
+        "team_id": 41426,
+        "team": "ytttttt",
+        "phase": "test",
+        "submitted_at": "2026-05-17T14:54:17.686278Z",
+        "model_name": "PaddleOCR-VL-1.5-0.9B-vLLM",
+        "model_type": "Pipeline",
+        "external_data": "True",
+        "scores": {
+          "Text_ED": 0.1463,
+          "Table_TEDS": 82.97,
+          "Formula_CDM": 0.62,
+          "Reading_Order": 61.22,
+          "Overall": 57.55
+        },
+        "rank": 3
+      },
+      {
+        "task": "doc",
+        "submission_id": "571095",
+        "team_id": 41431,
+        "team": "hskl18",
+        "phase": "dev",
+        "submitted_at": "2026-05-20T04:09:35.332691Z",
+        "model_name": "Tesseract-Ollama WeakDoc Hybrid",
+        "model_type": "Hybrid",
+        "external_data": true,
+        "scores": {
+          "Text_ED": 0.3897,
+          "Table_TEDS": 0.61,
+          "Formula_CDM": 0.0,
+          "Reading_Order": 50.93,
+          "Overall": 28.14
+        },
+        "rank": 4
+      }
+    ],
+    "chart": [
+      {
+        "task": "chart",
+        "submission_id": "570457",
+        "team_id": 41379,
+        "team": "xxxyyy",
+        "phase": "dev",
+        "submitted_at": "2026-05-13T12:06:37.206977Z",
+        "model_name": "Granite-vision-4.1-4b",
+        "model_type": "End-to-End VLM",
+        "external_data": "True",
+        "scores": {
+          "CSV_Numeric_F1": 79.13,
+          "CSV_Structural_Score": 75.94,
+          "Summary_ROUGE_L": 44.25,
+          "Summary_Numeric_Fact_F1": 72.29,
+          "Overall": 67.9
+        },
+        "rank": 1
+      },
+      {
+        "task": "chart",
+        "submission_id": "571279",
+        "team_id": 41426,
+        "team": "ytttttt",
+        "phase": "dev",
+        "submitted_at": "2026-05-21T05:33:22.648214Z",
+        "model_name": "Qwen2.5-VL-7B-LoRA",
+        "model_type": "Hybrid",
+        "external_data": "True",
+        "scores": {
+          "CSV_Numeric_F1": 58.57,
+          "CSV_Structural_Score": 55.39,
+          "Summary_ROUGE_L": 29.05,
+          "Summary_Numeric_Fact_F1": 54.22,
+          "Overall": 49.31
+        },
+        "rank": 2
+      },
+      {
+        "task": "chart",
+        "submission_id": "571292",
+        "team_id": 41431,
+        "team": "hskl18",
+        "phase": "dev",
+        "submitted_at": "2026-05-21T06:43:17.809603Z",
+        "model_name": "hybrid-chartnet-openai-qwen-manual-857",
+        "model_type": "Hybrid",
+        "external_data": true,
+        "scores": {
+          "CSV_Numeric_F1": 44.16,
+          "CSV_Structural_Score": 34.69,
+          "Summary_ROUGE_L": 19.63,
+          "Summary_Numeric_Fact_F1": 51.09,
+          "Overall": 37.39
+        },
+        "rank": 3
+      }
+    ]
+  }
 }
