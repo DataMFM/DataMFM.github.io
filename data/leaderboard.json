@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-21T06:46:00.595035Z",
+  "generated_at": "2026-05-21T14:43:02.618837Z",
   "policy": {
     "public_only": true,
     "best_per_team": true,
@@ -12,7 +12,7 @@
   },
   "source": {
     "submissions_root": "/root/datamfm-test/submissions",
-    "successful_public_records": 21
+    "successful_public_records": 26
   },
   "leaderboards": {
     "doc": [
@@ -56,22 +56,41 @@
       },
       {
         "task": "doc",
-        "submission_id": "570730",
+        "submission_id": "571315",
         "team_id": 41426,
         "team": "ytttttt",
-        "phase": "test",
-        "submitted_at": "2026-05-17T14:54:17.686278Z",
-        "model_name": "PaddleOCR-VL-1.5-0.9B-vLLM",
-        "model_type": "Pipeline",
+        "phase": "dev",
+        "submitted_at": "2026-05-21T10:07:20.772962Z",
+        "model_name": "PaddleOCR-VL-1.5 + MinerU-light RO fusion",
+        "model_type": "Hybrid",
         "external_data": "True",
         "scores": {
-          "Text_ED": 0.1463,
-          "Table_TEDS": 82.97,
+          "Text_ED": 0.1639,
+          "Table_TEDS": 91.05,
           "Formula_CDM": 0.62,
-          "Reading_Order": 61.22,
-          "Overall": 57.55
+          "Reading_Order": 60.74,
+          "Overall": 59.01
         },
         "rank": 3
+      },
+      {
+        "task": "doc",
+        "submission_id": "571376",
+        "team_id": 41256,
+        "team": "HHHHHHHHHH",
+        "phase": "test",
+        "submitted_at": "2026-05-21T14:28:48.219949Z",
+        "model_name": "qwen",
+        "model_type": "End-to-End VLM",
+        "external_data": "False",
+        "scores": {
+          "Text_ED": 0.2689,
+          "Table_TEDS": 65.47,
+          "Formula_CDM": 0.65,
+          "Reading_Order": 53.8,
+          "Overall": 48.26
+        },
+        "rank": 4
       },
       {
         "task": "doc",
@@ -90,7 +109,7 @@
           "Reading_Order": 50.93,
           "Overall": 28.14
         },
-        "rank": 4
+        "rank": 5
       }
     ],
     "chart": [
